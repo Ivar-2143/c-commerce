@@ -1,0 +1,545 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Apple",
+            "price": "25.00",
+            "category": "Fruits",
+            "image": "fruits/apple.jpg",
+            "sold": 20,
+            "unit": "/pc",
+            "searchTerms": ["mansanas"]
+
+        },
+        {
+            "id": 2,
+            "name": "Avocado",
+            "price": "50.00",
+            "category": "Fruits",
+            "image": "fruits/avocado.jpeg",
+            "sold": 14,
+            "unit": "/3 pcs",
+            "searchTerms":["abukado"]
+            
+        },
+        {
+            "id": 3,
+            "name": "Banana",
+            "price": "70.00",
+            "category": "Fruits",
+            "image": "fruits/banana.jpeg",
+            "sold": 33,
+            "unit": "/kg",
+            "searchTerms":["saging"]
+        },
+        {
+            "id":4,
+            "name": "Grapes",
+            "price": "125.00",
+            "category": "Fruits",
+            "image": "fruits/grapes.jpeg",
+            "sold": 103,
+            "unit": "/kg",
+            "searchTerms":["ubas"]
+        },
+        {
+            "id": 5,
+            "name": "Mango",
+            "price": "180.00",
+            "category": "Fruits",
+            "image": "fruits/mango.jpeg",
+            "sold": 25,
+            "unit": "/kg",
+            "searchTerms":["manga"]
+        },
+        {
+            "id": 6,
+            "name": "Orange",
+            "price": "45.00",
+            "category": "Fruits",
+            "image": "fruits/orange.jpeg",
+            "sold": 12,
+            "unit": "/pc",
+            "searchTerms":[]
+        },
+        {
+            "id": 7,
+            "name": "Pineapple",
+            "price": "25.00",
+            "category": "Fruits",
+            "image": "fruits/pineapple.jpeg",
+            "sold": 25,
+            "unit": "/pc",
+            "searchTerms":["pinya"]
+        },
+        {
+            "id": 8,
+            "name": "Strawberry",
+            "price": "140.00",
+            "category": "Fruits",
+            "image": "fruits/stb.jpg",
+            "sold": 77,
+            "unit": "/pack",
+            "searchTerms":["presa","istroberi"]
+        },
+        {
+            "id": 9,
+            "name": "Chicken Breast",
+            "price": "150.00",
+            "category": "Meats",
+            "image": "meats/chicken/chicken breast.jpg",
+            "sold": 73,
+            "unit": "/kg",
+            "searchTerms":["manok"]
+        },
+        {
+            "id": 10,
+            "name": "Chicken Drumstick",
+            "price": "180.00",
+            "category": "Meats",
+            "image": "meats/chicken/chicken drumstick.jpg",
+            "sold": 109,
+            "unit": "/kg",
+            "searchTerms":["manok"]
+            
+        },
+        {
+            "id": 11,
+            "name": "Chicken Gizzard",
+            "price": "100.00",
+            "category": "Meats",
+            "image": "meats/chicken/chicken gizzard.jpg",
+            "sold": 43,
+            "unit": "/kg",
+            "searchTerms":["manok"]
+        },
+        {
+            "id": 12,
+            "name": "Chicken Liver",
+            "price": "120.00",
+            "category": "Meats",
+            "image": "meats/chicken/chicken liver.jpg",
+            "sold": 1,
+            "unit": "/kg",
+            "searchTerms":["manok"]
+        },
+        {
+            "id": 13,
+            "name": "Chicken Neck",
+            "price": "80.00",
+            "category": "Meats",
+            "image": "meats/chicken/chicken neck.jpg",
+            "sold": 13,
+            "unit": "/kg",
+            "searchTerms":["manok"]
+        },
+        {
+            "id": 14,
+            "name": "Chicken Ribs",
+            "price": "150.00",
+            "category": "Meats",
+            "image": "meats/chicken/chicken ribs.jpeg",
+            "sold": 9,
+            "unit": "/kg",
+            "searchTerms":["manok"]
+
+        },
+        {
+            "id": 15,
+            "name": "Chicken Thigh",
+            "price": "100.00",
+            "category": "Meats",
+            "image": "meats/chicken/chicken thigh.jpg",
+            "sold": 283,
+            "unit": "/kg",
+            "searchTerms":["manok"]
+
+        },
+        {
+            "id": 16,
+            "name": "Chicken Wings",
+            "price": "120.00",
+            "category": "Meats",
+            "image": "meats/chicken/chicken wings.jpeg",
+            "sold": 832,
+            "unit": "/kg",
+            "searchTerms":["manok"]
+
+        },
+        {
+            "id": 17,
+            "name": "Pork Bacon",
+            "price": "250.00",
+            "category": "Meats",
+            "image": "meats/pork/bacon.jpeg",
+            "sold": 29,
+            "unit": "/kg",
+            "searchTerms":["karne", "carne"]
+        },
+        {
+            "id": 18,
+            "name": "Ground Pork",
+            "price": "200.00",
+            "category": "Meats",
+            "image": "meats/pork/ground pork.jpg",
+            "sold": 99,
+            "unit": "/kg",
+            "searchTerms":["karne", "carne"]
+
+        },
+        {
+            "id": 19,
+            "name": "Pork Belly",
+            "price": "280.00",
+            "category": "Meats",
+            "image": "meats/pork/pork belly.jpeg",
+            "sold": 299,
+            "unit": "/kg",
+            "searchTerms":["karne", "carne"]
+
+        },
+        {
+            "id": 20,
+            "name": "Pork Bones",
+            "price": "150.00",
+            "category": "Meats",
+            "image": "meats/pork/pork bones.jpeg",
+            "sold": 5,
+            "unit": "/kg",
+            "searchTerms":["karne", "carne"]
+
+        },
+        {
+            "id": 21,
+            "name": "Pork Pata",
+            "price": "170.00",
+            "category": "Meats",
+            "image": "meats/pork/Pork pata.jpeg",
+            "sold": 30,
+            "unit": "/kg",
+            "searchTerms":["karne", "carne"]
+
+        },
+        {
+            "id": 22,
+            "name": "Pork Ribs",
+            "price": "250.00",
+            "category": "Meats",
+            "image": "meats/pork/Pork ribs.jpg",
+            "sold": 7,
+            "unit": "/kg",
+            "searchTerms":["karne", "carne"]
+            
+        },
+        {
+            "id": 23,
+            "name": "Pork Shoulder",
+            "price": "200.00",
+            "category": "Meats",
+            "image": "meats/pork/pork shoulder.jpg",
+            "sold": 73,
+            "unit": "/kg",
+            "searchTerms":["karne", "carne"]            
+        },
+        {
+            "id": 24,
+            "name": "Pork Steak-Cut",
+            "price": "220.00",
+            "category": "Meats",
+            "image": "meats/pork/PORK-STEAK-CUT.jpeg",
+            "sold": 53,
+            "unit": "/kg",
+            "searchTerms":["karne", "carne", "steak"]
+        },
+        {
+            "id": 25,
+            "name": "Boneless Bangus",
+            "price": "100.00",
+            "category": "Seafoods",
+            "image": "seafood/bangus boneless.jpeg",
+            "sold": 93,
+            "unit": "/pc",
+            "searchTerms":["isda","milkfish"]
+        },
+        {
+            "id": 26,
+            "name": "Bream Fish",
+            "price": "220.00",
+            "category": "Seafoods",
+            "image": "seafood/bream fish.jpeg",
+            "sold": 35,
+            "unit": "/kg",
+            "searchTerms":["isda"]
+            
+        },
+        {
+            "id": 27,
+            "name": "Clam-Hardshell",
+            "price": "100.00",
+            "category": "Seafoods",
+            "image": "seafood/clam_hardshell.jpeg",
+            "sold": 6,
+            "unit": "/kg",
+            "searchTerms":["kabibe","halaan"]
+        },
+        {
+            "id": 28,
+            "name": "Crabs",
+            "price": "400.00",
+            "category": "Seafoods",
+            "image": "seafood/crabs.jpeg",
+            "sold": 12,
+            "unit": "/kg",
+            "searchTerms":["alimango","alimasag"]
+
+        },
+        {
+            "id": 29,
+            "name": "Shrimp",
+            "price": "700.00",
+            "category": "Seafoods",
+            "image": "seafood/shrimp.jpeg",
+            "sold": 242,
+            "unit": "/kg",
+            "searchTerms":["hipon"]
+
+        },
+        {
+            "id": 30,
+            "name": "Tilapia",
+            "price": "200.00",
+            "category": "Seafoods",
+            "image": "seafood/Tilapia.png",
+            "sold": 83,
+            "unit": "/kg",
+            "searchTerms":["isda","fish"]
+
+        },
+        {
+            "id": 31,
+            "name": "Tuna",
+            "price": "380.00",
+            "category": "Seafoods",
+            "image": "seafood/tuna.jpeg",
+            "sold": 69,
+            "unit": "/kg",
+            "searchTerms":["isda","fish"]
+
+        },
+        {
+            "id": 32,
+            "name": "Yellowfin",
+            "price": "270.00",
+            "category": "Seafoods",
+            "image": "seafood/yellowfin.png",
+            "sold": 56,
+            "unit": "/kg",
+            "searchTerms":["isda", "fish"]
+        },
+        {
+            "id": 33,
+            "name": "Bell Pepper",
+            "price": "258.09",
+            "category": "Veggies",
+            "image": "vegetables/bell pepper.jpeg",
+            "sold": 74, 
+            "unit": "/kg",
+            "searchTerms":["siling-pula", "siling pula"]
+
+        },
+        {
+            "id": 34,
+            "name": "Cabbage",
+            "price": "110.00",
+            "category": "Veggies",
+            "image": "vegetables/cabbage.jpeg",
+            "sold": 47,
+            "unit": "/kg",
+            "searchTerms":["repolyo"]
+
+        },
+        {
+            "id": 35,
+            "name": "Garlic ",
+            "price": "120.00",
+            "category": "Veggies",
+            "image": "vegetables/garlic.jpg",
+            "sold": 74,
+            "unit": "/kg",
+            "searchTerms":["bawang"]
+        },
+        {
+            "id": 36,
+            "name": "Kangkong",
+            "price": "17.00",
+            "category": "Veggies",
+            "image": "vegetables/kangkong.jpeg",
+            "sold": 52,
+            "unit": "/tali",
+            "searchTerms":["water spinach"]
+
+        },
+        {
+            "id": 37,
+            "name": "Okra",
+            "price": "60.00",
+            "category": "Veggies",
+            "image": "vegetables/ocra.jpeg",
+            "sold": 13,
+            "unit": "/kg",
+            "searchTerms":["lady's fingers", "gumbo"]
+        },
+        {
+            "id": 38,
+            "name": "Onion",
+            "price": "700.00",
+            "category": "Veggies",
+            "image": "vegetables/onions.jpeg",
+            "sold": 123,
+            "unit": "/kg",
+            "searchTerms":["sibuyas"]
+        },
+        {
+            "id": 39,
+            "name": "Sili",
+            "price": "260.00",
+            "category": "Veggies",
+            "image": "vegetables/sili.jpeg",
+            "sold": 63,
+            "unit": "/kg",
+            "searchTerms":"chili"
+        },
+        {
+            "id": 40,
+            "name": "Sitaw / Longbeans",
+            "price": "50.00",
+            "category": "Veggies",
+            "image": "vegetables/sitaw_longbeans.jpg",
+            "sold": 34,
+            "unit": "/tali"
+        },
+        {
+            "id": 41,
+            "name": "Squash",
+            "price": "55.00",
+            "category": "Veggies",
+            "image": "vegetables/squash.jpeg",
+            "sold": 27,
+            "unit": "/kg",
+            "searchTerms":["kalabasa"]
+        },
+        {
+            "id": 42,
+            "name": "Ampalaya",
+            "price": "100.00",
+            "category": "Veggies",
+            "image": "vegetables/Ampalaya.JPG",
+            "sold": 2,
+            "unit": "/kg",
+            "searchTerms":["bitter gourd"]
+        },
+        {
+            "id": 43,
+            "name": "Broccoli",
+            "price": "360.00",
+            "category": "Veggies",
+            "image": "vegetables/Broccoli.JPG",
+            "sold": 45,
+            "unit": "/kg",
+            "searchTerms":["brokuli"]
+        },
+        {
+            "id": 44,
+            "name": "Calamansi",
+            "price": "120.00",
+            "category": "Veggies",
+            "image": "vegetables/Calamansi.JPG",
+            "sold": 60,
+            "unit": "/kg",
+            "searchTerms":["kalamansi"]
+        },
+        {
+            "id": 45,
+            "name": "Carrots",
+            "price": "90.00",
+            "category": "Veggies",
+            "image": "vegetables/Carrots.JPG",
+            "sold": 20,
+            "unit": "/kg",
+            "searchTerms":["karot"]
+        },
+        {
+            "id": 46,
+            "name": "Celery",
+            "price": "110.00",
+            "category": "Veggies",
+            "image": "vegetables/Celery.JPG",
+            "sold": 70,
+            "unit": "/kg",
+            "searchTerms":["kinchay"]
+        },
+        {
+            "id": 47,
+            "name": "Cucumber",
+            "price": "90.00",
+            "category": "Veggies",
+            "image": "vegetables/Cucumber.JPG",
+            "sold": 16,
+            "unit": "/kg",
+            "searchTerms":["pipino"]
+        },
+        {
+            "id": 48,
+            "name": "Eggplant",
+            "price": "110.00",
+            "category": "Veggies",
+            "image": "vegetables/Eggplant.JPG",
+            "sold": 78,
+            "unit": "/kg",
+            "searchTerms":["talong"]
+        },
+        {
+            "id": 49,
+            "name": "Dalandan",
+            "price": "110.00",
+            "category": "Fruits",
+            "image": "fruits/Dalandan.JPG",
+            "sold": 36,
+            "unit": "/kg",
+            "searchTerms":[]
+        },
+        {
+            "id": 50,
+            "name": "Pomelo",
+            "price": "130.00",
+            "category": "Fruits",
+            "image": "fruits/Pomelo.JPG",
+            "sold": 49,
+            "unit": "/kg",
+            "searchTerms":["shaddock"]
+
+        },
+        {
+            "id": 51,
+            "name": "Singkamas",
+            "price": "50.00",
+            "category": "Fruits",
+            "image": "fruits/Singkamas.JPG",
+            "sold": 36,
+            "unit": "/kg",
+            "searchTerms":[]
+
+        },
+        {
+            "id": 52,
+            "name": "Sweet Melon",
+            "price": "70.00",
+            "category": "Fruits",
+            "image": "fruits/Sweet Melon.JPG",
+            "sold": 14,
+            "unit": "/kg",
+            "searchTerms":[]
+        }
+
+    ]    
+}
