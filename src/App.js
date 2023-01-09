@@ -5,6 +5,8 @@ import Popular from './pages/Popular';
 import Category from './pages/Category';
 import ProductPage from './pages/ProductPage';
 import Searched from './pages/Searched';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 const theme = {
   main: {
@@ -35,6 +37,10 @@ function App() {
             <Route path='products/:type' element={<Category />}>
           </Route>
           <Route path='search/:searched' element={<Searched />} />
+          </Route>
+          <Route path={"/signin"} element={<SignIn/>}>
+          </Route>
+          <Route path={"/signup"} element={<SignUp/>}>
           </Route>
         </Routes>
         {background && (

@@ -4,7 +4,7 @@ import logo_sm from '../assets/logo-sm.png';
 import cartIcon from '../assets/icons/shopping-cart.png';
 import menuIcon from '../assets/icons/burger-menu-icon.png';
 import * as variable from './variables';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
 
@@ -22,7 +22,7 @@ function Header() {
                     <CartContainer>
                         <img src={cartIcon} alt="cart" />
                     </CartContainer>
-                    <button>Sign In</button>
+                    <Link to="/signin"><button>Sign In</button></Link>
                     <BurgerMenu src={menuIcon} />
                 </RightContainer>
             </Wrapper>
