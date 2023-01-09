@@ -11,7 +11,7 @@ See [https://www.npmjs.com/package/json-server](https://www.npmjs.com/package/js
 
 
 ## `npx json-server --watch ./data/dbProducts.json --port 8000`
-## `npx json npx json-server --watch ./data/dbUsers.json --port 9000`
+## `npx json-server --watch ./data/dbUsers.json --port 9000`
 
 Type both commands in a separate terminal and it will create the exact port used to fetch data. Setting the specific port prevents conflict with 'npm start.'
 Make sure that your current working directory is in /c-commerce/src before executing the said commands.
