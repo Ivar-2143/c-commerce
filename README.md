@@ -10,9 +10,11 @@ You need to install json server in your computer and run it in your terminal.\
 See [https://www.npmjs.com/package/json-server](https://www.npmjs.com/package/json-server) for the instructions on how to get started.
 
 
-## `npx json-server --watch src/data/dbProducts.json --port 8000`
+## `npx json-server --watch ./data/dbProducts.json --port 8000`
+## `npx json npx json-server --watch ./data/dbUsers.json --port 9000`
 
-Type it in the terminal and it will create the exact port used to fetch data. Setting the specific port prevents conflict with 'npm start.'
+Type both commands in a separate terminal and it will create the exact port used to fetch data. Setting the specific port prevents conflict with 'npm start.'
+Make sure that your current working directory is in /c-commerce/src before executing the said commands.
 
 
 ### `npm start`
