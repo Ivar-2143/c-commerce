@@ -1,6 +1,7 @@
 import Home from './pages/Home';
 import { ThemeProvider } from 'styled-components';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Popular from './pages/Popular';
 import Category from './pages/Category';
 import ProductPage from './pages/ProductPage';
@@ -28,22 +29,21 @@ function App() {
   const location = useLocation();
   const background = location.state && location.state.background;
   console.log(location.state);
-
+  
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Routes location={background || location}>
-          <Route path={"/"} element={<Home/>}>
-            <Route index element={<Popular />}/>
-            <Route path='products/:type' element={<Category />}>
-          </Route>
-          <Route path='search/:sear ched' element={<Searched />} />
-          </Route>
-          <Route path={"/login"} element={<LogIn/>}>
-          </Route>
-          <Route path={"/signup"} element={<SignUp/>}>
-          </Route>
-        </Routes>
+        {/* {isLoggedIn && ( */}
+          <Routes location={background || location}>            
+            <Route path={"/"} element={<Home/>}>
+              <Route index element={<Popular />}/>
+              <Route path='products/:type' element={<Category />} />
+            </Route>
+            <Route path='search/:searched' element={<Searched />} />
+            <Route  path={"/login"} element={<LogIn/>} />
+            <Route path={"/signup"} element={<SignUp/>} />
+          </Routes>
+         {/* )} */}
         {background && (
           <Routes>
             <Route path={`product/:id`} element={<ProductPage />} />

@@ -32,6 +32,7 @@ const size = {
 
   export const radius = {
     smooth_edge: "4px",
+    smoother_edge: "30px",
     round_edge: '100px'
   }
 
