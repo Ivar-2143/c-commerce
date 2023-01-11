@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import backDrop from '../assets/market aerial view.jpg';
+import logo_ghostWhite from '../assets/logos/logo_ghostWhite.png';
+import banner from '../assets/fresh_products_banner.jpg';
 import * as variable from '../components/variables';
 import { ContentWrapper, ImageWrapper, BgContainer, Background, GlassFilter, LogoOverlay, SideImage } from '../components/globalStyles';
-import logo_ghostWhite from '../assets/logos/logo_ghostWhite.png';
 
 const LogIn = () => {
 
@@ -29,11 +30,12 @@ const LogIn = () => {
   return (
     <BgContainer>
       <Background src={backDrop}/> 
-      <ContentWrapper>
+      <GlassFilter background="background"/>
+      <ContentWrapper >
         <ImageWrapper>
         <LogoOverlay src={logo_ghostWhite} />
         <GlassFilter />
-        <SideImage src={backDrop} alt="" />
+        <SideImage src={banner} alt="" />
         </ImageWrapper>
         <FormWrapper>
           <h1> Log in </h1>
@@ -46,7 +48,7 @@ const LogIn = () => {
               Password
             </label>
             <input type="password"></input>
-            <input type="submit" value="Sign in"></input>
+            <input type="submit" value="Log in"></input>
           </form>
           <p>Not signed in yet? <Link to="/signup">Click here to sign up.</Link></p>
         </FormWrapper>
@@ -64,11 +66,12 @@ const FormWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items:center;
-
+  p{
+      font-size: ${variable.font.size_s};
+    }
   form{
     width: 70%;
     height: 50%;
-    /* background-color: green; */
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -104,7 +107,6 @@ const FormWrapper = styled.div`
       border: none;
       &:hover{
         border: 2px solid ${(props)=> props.theme.main.secondary}
-        
       }
     }
   }

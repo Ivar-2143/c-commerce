@@ -26,7 +26,6 @@ export const BgContainer = styled.div`
   position: relative;
   overflow: hidden;
   color: ${(props) => props.theme.main.secondary};
-
 `; 
 
 export const LogoOverlay = styled.img`
@@ -43,11 +42,11 @@ export const GlassFilter = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: ${props => props.background? 1 : 5};
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0,0.2);
+  background-color: ${props => props.background? "rgba(0,0,0,0.6)" : "rgba(0,0,0,0.2)" };
 
 `;
 
@@ -58,7 +57,7 @@ export const Background = styled.img`
   height: 100%;
   transform: scale(1.1);
   object-fit: cover;
-  filter: blur(4px);
+  filter: blur(8px);
   pointer-events: none;
 
 `;
@@ -88,6 +87,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   left: 50%;
   top: 50%;
+  z-index: 3;
   transform: translate(-50%, -50%);
   background-color: ${(props)=> props.theme.main.primary};
   border-radius: ${variable.radius.smoother_edge};

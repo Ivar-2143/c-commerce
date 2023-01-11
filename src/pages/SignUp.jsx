@@ -2,9 +2,11 @@ import React from 'react'
 import { BgContainer, Background, ImageWrapper, ContentWrapper, LogoOverlay, SideImage, GlassFilter} from '../components/globalStyles'
 import styled from 'styled-components'
 import backDrop from '../assets/market aerial view.jpg';
+import banner from '../assets/fresh_products_banner.jpg';
+import logo_ghostWhite from '../assets/logos/logo_ghostWhite.png';
 import { Link } from 'react-router-dom';
 import * as variable from '../components/variables';
-import logo_ghostWhite from '../assets/logos/logo_ghostWhite.png';
+
 
 const SignUp = () => {
 
@@ -55,23 +57,30 @@ const SignUp = () => {
   return (
     <BgContainer>
       <Background src={backDrop}/>
+      <GlassFilter background="background"/>
       <ContentWrapper>
       <ImageWrapper>
         <LogoOverlay src={logo_ghostWhite} />
         <GlassFilter />
-        <SideImage src={backDrop} alt="" />
+        <SideImage src={banner} alt="" />
       </ImageWrapper>
       <FormWrapper>
-        <h1> Sign in </h1>
+        <h1> Sign up </h1>
         <form onSubmit={handleSignUp}>
-          <label> 
-            First Name
-          </label>
-          <input type="text"></input>
-          <label>
-            Last Name
-          </label>
-          <input type="text"></input>
+          <NameWrap>
+            <FirstName>
+              <label> 
+                First Name
+              </label>
+              <input type="text"></input>
+            </FirstName>
+            <LastName>
+              <label>
+                Last Name
+              </label>
+              <input type="text"></input>
+            </LastName>
+          </NameWrap>
           <label>
             Email
           </label>
@@ -89,7 +98,7 @@ const SignUp = () => {
           </label>
           <input type="text"></input>
           <input type="submit" value="Create Account"></input>
-          <p>Already have an account? <Link to="/login">Click here to log in.</Link></p>
+          <p>Already have an account? <br /> <Link to="/login">Click here to log in.</Link></p>
         </form>
       </FormWrapper>
       </ContentWrapper>
@@ -104,21 +113,22 @@ const FormWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   position: relative;
   form{
-    width: 85%;
-    height: 80%;
+    width: 70%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-top: 20px;
     p{
       font-size: ${variable.font.size_s};
       position: relative;
       width: 100%;
       text-align: center;
-      margin-top: 2px;
+      margin-top: 10px;
     }
     label{
       margin-top:4px;
@@ -138,10 +148,11 @@ const FormWrapper = styled.div`
     input[type="submit"]{
       background-color: ${(props) => props.theme.main.accent};
       height: 40px;
+      margin-top: 25px;
       border-radius: ${variable.radius.round_edge};
-      margin-top: 20px;
       color: ${(props)=> props.theme.main.secondary};
       cursor: pointer;
+      text-align: center;
       border: none;
       &:hover{
         border: 2px solid ${(props)=> props.theme.main.secondary};
@@ -149,6 +160,25 @@ const FormWrapper = styled.div`
       
     }
   }
+`;
+
+const FirstName = styled.div`
+  width: 49%;
+  input{
+    width: 100%;
+  }
+`;
+
+const LastName = styled.div`
+  width: 49%;
+  input{
+    width: 100%;
+  }
+`;
+const NameWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export default SignUp;
