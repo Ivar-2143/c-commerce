@@ -8,6 +8,7 @@ import ProductPage from './pages/ProductPage';
 import Searched from './pages/Searched';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
+import Cart from './pages/Cart';
 
 const theme = {
   main: {
@@ -42,6 +43,7 @@ function App() {
             <Route path='search/:searched' element={<Searched />} />
             <Route  path={"/login"} element={<LogIn/>} />
             <Route path={"/signup"} element={<SignUp/>} />
+            <Route path={"/cart"} element={<Cart/>}/>
           </Routes>
          {/* )} */}
         {background && (
