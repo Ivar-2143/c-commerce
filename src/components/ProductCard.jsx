@@ -38,7 +38,7 @@ const Button = styled.div`
     right: 5%;
     border-radius: ${variable.big_radius};
     border: 2px solid ${(props) => props.theme.main.secondary};
-    background-color: ${(props)=> props.theme.main.accentBlue};
+    background-color: ${(props)=> props.theme.main.accent};
 
     img{
         position: relative;
@@ -59,7 +59,7 @@ const Line = styled.div`
     left:50%;
     transform: translate(-50%,0);
     border-radius: ${variable.small_radius};
-    background-color: ${(props)=> props.theme.main.secondary};
+    background-color: ${(props)=> props.theme.main.primary};
     margin-top: 1px;
 `;
 
@@ -74,10 +74,12 @@ const DetailContainer = styled.div`
 
 const Name = styled.span`
   font-size: ${variable.font_medium};
+  color: ${(props)=> props.theme.main.primary}
 `;
 const Price = styled.span`
   font-size: ${variable.font_standard};
   font-weight: 600;
+  color: ${(props)=> props.theme.main.primary}
 `
 
 const Container = styled(Link)`
@@ -85,23 +87,17 @@ const Container = styled(Link)`
     width: 220px;
     height: 300px;
     border-radius: ${variable.small_radius};
-    background-color: ${(props)=> props.theme.main.primary};
+    background-color: ${(props)=> props.theme.main.secondary};
     overflow: hidden;
-    border: 2px solid #000;
     cursor: pointer;
     text-decoration: none;
     color: ${(props)=> props.theme.main.secondary};
     &:hover{  
       background-color: ${(props)=> props.theme.main.tintedSecondary};
       transition: 0.45s ease;
-      span{
-        color: ${(props) => props.theme.main.primary};
-      }
+      
       ${Button}{
         border: 2px solid ${(props) => props.theme.main.primary} ;
-      }
-      ${Line}{
-        background-color: ${(props) => props.theme.main.primary};
       }
       
     }
@@ -137,9 +133,13 @@ const Container = styled(Link)`
 `;
 
 const ImgContainer = styled.div`
-  width: 100%;
-  height: 65%;
+  width: 90%;
+  height: 58%;
   position: relative;
+  left: 50%;
+  margin-top: 5%;
+  transform: translate(-50%,0);
+  border-radius: ${variable.radius.smooth_edge};
   img{
     position:relative;
     left: 50%;
@@ -148,6 +148,7 @@ const ImgContainer = styled.div`
     object-fit: cover;
     width: 100%;
     height: 100%;
+    border-radius: inherit  ;
   }
 `
 

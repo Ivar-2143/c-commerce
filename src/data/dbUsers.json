@@ -17,6 +17,18 @@
       "cart": [],
       "orders": [],
       "id": 2
+    },
+    {
+      "email": "adrian@email.com",
+      "password": "",
+      "firstName": "",
+      "lastName": "",
+      "address": "",
+      "userMobileNumber": "",
+      "cart": [],
+      "orders": [],
+      "type": "customer",
+      "id": 3
     }
   ]
 }
