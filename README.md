@@ -12,9 +12,9 @@ See [https://www.npmjs.com/package/json-server](https://www.npmjs.com/package/js
 ## `npx json-server --watch ./data/dbProducts.json --port 8000`
 ## `npx json-server --watch ./data/dbUsers.json --port 9000`
 
-Type each commands in a separate terminal (1 command per terminal) and it will create the exact port used to fetch data.
+Type each commands in a separate terminal (1 command per terminal) to allow the site to load certain sitedata and enable login system.
 Setting the specific port prevents conflict with 'npm start'.
-Make sure that your current working directory is in /c-commerce/src before executing the said commands.
+Make sure that your current working directory is in ./c-commerce/src before executing the said commands.
 
 ### `npm start`
 

@@ -6,7 +6,20 @@
       "password": "johndoe123",
       "firstName": "John",
       "lastName": "Doe",
-      "cart": [],
+      "cart": [
+        {
+          "productName": "Onion",
+          "productPrice": "700.00"
+        },
+        {
+          "productName": "Onion",
+          "productPrice": "700.00"
+        },
+        {
+          "productName": "Chicken Wings",
+          "productPrice": "120.00"
+        }
+      ],
       "orders": []
     },
     {

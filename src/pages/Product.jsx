@@ -1,9 +1,27 @@
 
 import styled from "styled-components";
 import * as variable from '../components/variables';
+import { currentLogInUser } from "./LogIn";
 
 function Product(product) {
     console.log(product);
+
+    const handleAddToCart = async () =>
+    {
+        const currentUser = await fetch(`http://localhost:9000/users/${currentLogInUser[currentLogInUser.length - 1].id}`)
+        .then(response => response.json())
+        const response = await fetch(`http://localhost:9000/users/${currentUser.id}`,
+        {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({...currentUser, cart:{...currentUser}.cart.concat([{productName: product.name, productPrice: product.price}])})
+        }).catch(err => alert(`Error: ${err.message}`))
+
+        response.status === 200 ? alert("Item successfully added to cart.") : alert("Something went wrong adding the item to your cart.")
+    }   
+
   return (
     <>
         <ImageContainer>
@@ -20,10 +38,14 @@ function Product(product) {
                 </Price>
             </NamePriceWrap>
         </ProductDetails>
-        <FormContainer>
-            <textarea type="text" placeholder='Order NOtes...' wrap='hard' rows='1' />
+        <FormContainer> 
+            {/* Suggestion:
+                Move order notes to cart finalization page
+                - James
+            */}
+            <textarea type="text" placeholder='Order Notes...' wrap='hard' rows='1' />
         </FormContainer>
-        <AddToCartBtn> Add to Cart </AddToCartBtn>
+        <AddToCartBtn onClick={handleAddToCart}> Add to Cart </AddToCartBtn>
             
     </>
   )
