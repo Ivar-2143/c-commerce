@@ -103,7 +103,12 @@ const RightContainer = styled.div`
         font-size: ${variable.font_medium};
         font-weight: 600;
         margin-left: 20px;
-        background-color: ${(props) => props.theme.main.accentBlue};
+        background-color: ${(props) => props.theme.main.accent};
+        border: none;
+        &:hover{
+            border: 2px solid ${(props) => props.theme.main.secondary};
+            
+        }
     }
     @media (width < 700px) {
         button,${CartContainer}{

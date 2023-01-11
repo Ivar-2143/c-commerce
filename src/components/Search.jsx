@@ -40,9 +40,9 @@ const SearchBar = styled.div`
       text-align: center;
       border-radius: ${variable.small_radius};
       padding: 3px 0;
-      border: 2px solid #000;
-      background-color: ${(props) => props.theme.main.primary};
-      
+      border: 2px solid ${(props) => props.theme.main.secondary};
+      background-color: ${(props) => props.theme.main.secondary};
+      color: ${(props) => props.theme.main.primary}
       
     }
     @media (max-width: ${variable.smallScreen}) {
