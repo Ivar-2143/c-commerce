@@ -10,8 +10,9 @@ import SignUp from './pages/SignUp';
 
 const theme = {
   main: {
-    primary: "#F7F7FF",
-    secondary: "#000",
+    primary: "#E8E9F3",
+    secondary: "#272635",
+    accent: "#FFAE03",
     accentBlue: "#429BFA",
     accentGreen: "#DBFE87",
     accentRed: "#EA526F",
@@ -36,7 +37,7 @@ function App() {
             <Route index element={<Popular />}/>
             <Route path='products/:type' element={<Category />}>
           </Route>
-          <Route path='search/:searched' element={<Searched />} />
+          <Route path='search/:sear ched' element={<Searched />} />
           </Route>
           <Route path={"/login"} element={<LogIn/>}>
           </Route>
