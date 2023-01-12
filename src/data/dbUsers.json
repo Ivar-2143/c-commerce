@@ -18,12 +18,47 @@
         {
           "productName": "Chicken Thigh",
           "productPrice": "100.00",
-          "itemQuantity": 4
+          "itemQuantity": 9
         },
         {
           "productName": "Onion",
           "productPrice": "700.00",
           "itemQuantity": 3
+        },
+        {
+          "productName": "Boneless Bangus",
+          "productPrice": "100.00",
+          "itemQuantity": 2
+        },
+        {
+          "productName": "Shrimp",
+          "productPrice": "700.00",
+          "itemQuantity": 1
+        },
+        {
+          "productName": "Chicken Drumstick",
+          "productPrice": "180.00",
+          "itemQuantity": 2
+        },
+        {
+          "productName": "Pomelo",
+          "productPrice": "130.00",
+          "itemQuantity": 1
+        },
+        {
+          "productName": "Banana",
+          "productPrice": "70.00",
+          "itemQuantity": 3
+        },
+        {
+          "productName": "Pineapple",
+          "productPrice": "25.00",
+          "itemQuantity": 2
+        },
+        {
+          "productName": "Orange",
+          "productPrice": "45.00",
+          "itemQuantity": 1
         }
       ],
       "orders": [],

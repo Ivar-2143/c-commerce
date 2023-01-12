@@ -1,7 +1,9 @@
-import React from 'react'
 import { currentLogInUser } from './LogIn'
+import { UserInfo } from '../App';
+import { useContext } from 'react';
 
 const Cart = () => {
+  const {user,updateUser, cart, updateCart} = useContext(UserInfo);
 
   const cartDetails = async () =>
   {
@@ -10,20 +12,26 @@ const Cart = () => {
     .then(jsonfile => jsonfile.cart)
     return getCartDetails
   }
-  let totalPrice = 0
+
+  let totalPrice = 0; 
+
+  const calculateTotal = (price, qty) => {
+    totalPrice += price * qty
+  }
+
   return (
     <>  
       <ul>
-        {cartDetails.map(cartItem => 
-        <li>
+        {cart.map(cartItem => 
+        <li key={cartItem.id}>
           Item Name: {cartItem.productName}
           <br />
           Item Quantity: {cartItem.itemQuantity}
           <br />
           Item Price: {cartItem.productPrice}
           <br />
-          Total Price For {cartItem.productName}: {cartItem.productName * cartItem.itemQuantity}
-          {totalPrice += cartItem.productName * cartItem.itemQuantity}
+          Total Price For {cartItem.productName}: {cartItem.productPrice * cartItem.itemQuantity} 
+          {calculateTotal(cartItem.productPrice,cartItem.itemQuantity)}
         </li>)}
       </ul>
       <p> Total Price of all items: {totalPrice}</p>

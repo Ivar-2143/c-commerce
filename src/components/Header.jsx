@@ -5,8 +5,15 @@ import cartIcon from '../assets/icons/shopping-cart.png';
 import menuIcon from '../assets/icons/burger-menu-icon.png';
 import * as variable from './variables';
 import { Link, NavLink } from "react-router-dom";
+import { useContext , useEffect} from "react";
+import { UserInfo } from "../App";
 
 function Header() {
+    const {user,updateUser,cart,updateCart} = useContext(UserInfo);
+
+    useEffect(()=>{
+        console.log(cart.length);
+    },[cart]);
 
     return (
         <div>
@@ -20,9 +27,10 @@ function Header() {
                 </StyledLink>
                 <RightContainer>
                     <CartContainer>
-                        <img src={cartIcon} alt="cart" />
+                       <Link to="/cart"><img src={cartIcon} alt="cart" /></Link> 
+                       <span>{cart.length}</span>
                     </CartContainer>
-                    <Link to="/signin"><button>Sign In</button></Link>
+                    <Link to="/login"><button>Sign In</button></Link>
                     <BurgerMenu src={menuIcon} />
                 </RightContainer>
             </Wrapper>
