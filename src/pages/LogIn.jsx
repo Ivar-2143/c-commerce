@@ -31,7 +31,8 @@ const LogIn = () => {
       updateUser(filteredCredential[0]);
       updateCart(filteredCredential[0].cart);
       
-      navigate("/")
+      (filteredCredential[0].type == "customer")? navigate("/") : navigate("/riders");
+      
     }
     else
     {

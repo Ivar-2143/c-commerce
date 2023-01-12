@@ -7,6 +7,7 @@
       "firstName": "John",
       "lastName": "Doe",
       "cart": [],
+      "type": "customer",
       "orders": []
     },
     {
@@ -62,18 +63,19 @@
         }
       ],
       "orders": [],
+      "type": "customer",
       "id": 2
     },
     {
-      "email": "adrian@email.com",
-      "password": "",
-      "firstName": "",
-      "lastName": "",
-      "address": "",
-      "userMobileNumber": "",
+      "email": "testrider@email.com",
+      "password": "12345",
+      "firstName": "Adrian",
+      "lastName": "Jeluz",
+      "address": "Imus, Cavite",
+      "userMobileNumber": "09123456789",
       "cart": [],
       "orders": [],
-      "type": "customer",
+      "type": "rider",
       "id": 3
     }
   ]
