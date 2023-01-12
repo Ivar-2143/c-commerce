@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import backDrop from '../assets/market aerial view.jpg';
@@ -6,11 +6,13 @@ import logo_ghostWhite from '../assets/logos/logo_ghostWhite.png';
 import banner from '../assets/fresh_products_banner.jpg';
 import * as variable from '../components/variables';
 import { ContentWrapper, ImageWrapper, BgContainer, Background, GlassFilter, LogoOverlay, SideImage } from '../components/globalStyles';
+import { UserContext } from '../assets/context/UserContext';
+import { UserInfo } from '../App';
 
 let currentLogInUser;
 
 const LogIn = () => {
-
+  const {user,updateUser, cart, updateCart} = useContext(UserInfo);
   const navigate = useNavigate()
   const handleSignIn = async (event) =>
   {
@@ -25,6 +27,10 @@ const LogIn = () => {
     {
       alert("Login success!")
       currentLogInUser = filteredCredential
+      
+      updateUser(filteredCredential[0]);
+      updateCart(filteredCredential[0].cart);
+      
       navigate("/")
     }
     else
