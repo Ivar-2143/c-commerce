@@ -1,9 +1,70 @@
 
 import styled from "styled-components";
 import * as variable from '../components/variables';
+import { currentLogInUser } from "./LogIn";
 
 function Product(product) {
     console.log(product);
+
+    const handleAddToCart = async () =>
+    {
+        let newCart;
+        let alreadyExistingItem = false
+        let canPush = true
+        const currentUser = await fetch(`http://localhost:9000/users/${currentLogInUser[0].id}`)
+        .then(response => response.json())
+        .catch(err => {
+            canPush = false
+            alert(`Error: ${err.message}`)
+        })
+
+        if (canPush === false) { return }
+
+        currentUser.cart.forEach(element => {
+            if (element.productName === product.name)
+            {
+                alreadyExistingItem = true
+            }
+        })
+
+        if (alreadyExistingItem)
+        {
+            const cartItem = currentUser.cart.filter(element => element.productName === product.name)[0]
+            const cartItemIndex = currentUser.cart[currentUser.cart.indexOf(cartItem)]
+            cartItem.itemQuantity += 1
+            currentUser.cart[cartItemIndex] = {...cartItem}
+            newCart = currentUser.cart
+        }
+        else
+        {
+            newCart = currentUser.cart.concat([{productName: product.name, productPrice: product.price, itemQuantity: 1}])
+        }
+
+        const response = await fetch(`http://localhost:9000/users/${currentUser.id}`,
+        {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({...currentUser, cart:newCart})
+        }).catch(err => alert(`Error: ${err.message}`))
+
+        if (response.status === 200)
+        {
+            if (alreadyExistingItem)
+            {
+                alert("Item already exists in cart. Item quantity increased.")
+                return
+            }
+            alert("Item successfully added to cart.")
+        }
+        else
+        {
+            alert("Something went wrong adding the item to your cart.")
+        }
+         
+    }   
+
   return (
     <>
         <ImageContainer>
@@ -20,10 +81,14 @@ function Product(product) {
                 </Price>
             </NamePriceWrap>
         </ProductDetails>
-        <FormContainer>
-            <textarea type="text" placeholder='Order NOtes...' wrap='hard' rows='1' />
+        <FormContainer> 
+            {/* Suggestion:
+                Move order notes to cart finalization page
+                - James
+            */}
+            <textarea type="text" placeholder='Order Notes...' wrap='hard' rows='1' />
         </FormContainer>
-        <AddToCartBtn> Add to Cart </AddToCartBtn>
+        <AddToCartBtn onClick={handleAddToCart}> Add to Cart </AddToCartBtn>
             
     </>
   )

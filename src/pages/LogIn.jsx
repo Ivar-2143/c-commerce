@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import backDrop from '../assets/market aerial view.jpg';
 import logo_ghostWhite from '../assets/logos/logo_ghostWhite.png';
@@ -7,8 +7,11 @@ import banner from '../assets/fresh_products_banner.jpg';
 import * as variable from '../components/variables';
 import { ContentWrapper, ImageWrapper, BgContainer, Background, GlassFilter, LogoOverlay, SideImage } from '../components/globalStyles';
 
+let currentLogInUser;
+
 const LogIn = () => {
 
+  const navigate = useNavigate()
   const handleSignIn = async (event) =>
   {
     event.preventDefault();
@@ -17,9 +20,12 @@ const LogIn = () => {
     .then(res => res.json()) 
     .catch(err => console.log(`SIGN-IN ERROR: ${err.message}`))
     
-    if (data.filter(data => data.email === email && data.password === password).length === 1)
+    const filteredCredential = data.filter(data => data.email === email && data.password === password)
+    if (filteredCredential.length === 1)
     {
       alert("Login success!")
+      currentLogInUser = filteredCredential
+      navigate("/")
     }
     else
     {
@@ -112,5 +118,5 @@ const FormWrapper = styled.div`
   }
 `;
 
-
+export {currentLogInUser};
 export default LogIn;

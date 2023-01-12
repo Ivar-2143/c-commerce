@@ -14,7 +14,18 @@
       "password": "12345",
       "firstName": "Pinoy",
       "lastName": "Ako",
-      "cart": [],
+      "cart": [
+        {
+          "productName": "Chicken Thigh",
+          "productPrice": "100.00",
+          "itemQuantity": 4
+        },
+        {
+          "productName": "Onion",
+          "productPrice": "700.00",
+          "itemQuantity": 3
+        }
+      ],
       "orders": [],
       "id": 2
     },

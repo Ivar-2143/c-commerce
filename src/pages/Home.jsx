@@ -7,6 +7,7 @@ import { useState, useEffect} from 'react';
 import { BrowserRouter, Outlet, useNavigate } from 'react-router-dom';
 import ProductPage from './ProductPage';
 import Modals from './Modals';
+import { currentLogInUser } from './LogIn';
 
 function Home(){
     const navigate = useNavigate();
@@ -14,13 +15,18 @@ function Home(){
 
     useEffect(()=>{
 
-      if(!isLoggedIn){
+      if(!currentLogInUser){
           console.log(!isLoggedIn);
+          setIsLoggedIn(!isLoggedIn)
           navigate('/login');
+      }
+      else
+      {
+        console.log(currentLogInUser)
       }
     },[]);
 
-
+    
     return(
         <>
             <Header/>
