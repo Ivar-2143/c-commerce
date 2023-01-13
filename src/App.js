@@ -31,12 +31,18 @@ export const UserInfo = createContext();
 
 
 function App() {
+  const currentUser = JSON.parse(sessionStorage.getItem("user"));
   const location = useLocation();
   const [user,setUser] = useState(null);
   const [cart,setCart] = useState([]);
   const background = location.state && location.state.background;
   console.log(location.state);
-
+  useEffect(()=>{
+    if(currentUser){
+      setUser(currentUser);
+      setCart(currentUser.cart);
+    }
+  },[]);
   
   return (
     <div className="App">

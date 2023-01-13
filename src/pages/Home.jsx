@@ -4,26 +4,30 @@ import Categories from '../components/Categories';
 import Pages from './Pages';
 import styled from 'styled-components';
 import { useState, useEffect, useContext} from 'react';
-import { BrowserRouter, Outlet, useNavigate } from 'react-router-dom';
+import { BrowserRouter, json, Outlet, useNavigate } from 'react-router-dom';
 import ProductPage from './ProductPage';
 import Modals from './Modals';
 import { currentLogInUser } from './LogIn';
 import { UserInfo } from '../App';
 
 function Home(){
+    const currentUser = JSON.parse(sessionStorage.getItem("user"));
     const {user,updateUser, cart, updateCart} = useContext(UserInfo);
+    console.log();
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(()=>{
-      
-      if(!user){
+      if(!currentUser){
           console.log(!isLoggedIn);
           setIsLoggedIn(!isLoggedIn)
           navigate('/login');
       }
       else
       {
+        updateUser(currentUser);
+        updateCart(currentUser.cart);
+
         console.log(user);
       }
     },[]);
