@@ -6,9 +6,11 @@ import { UserInfo } from "../App";
 import * as variable from '../components/variables';
 import { currentLogInUser } from "./LogIn";
 
-function Product(product) {
+function Product({product}) {
     console.log(product);
     const {user,updateUser,cart,updateCart} = useContext(UserInfo);
+    
+
 
     const handleAddToCart = async () =>
     {
@@ -43,7 +45,7 @@ function Product(product) {
         }
         else
         {
-            newCart = currentUser.cart.concat({productName: product.name, productPrice: product.price, itemQuantity: 1})
+            newCart = currentUser.cart.concat({productName: product.name, productPrice: product.price, itemQuantity: 1, id: product.id, image: product.image})
             updateCart(newCart);
             console.log(cart);
         }

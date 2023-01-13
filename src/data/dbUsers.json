@@ -17,49 +17,88 @@
       "lastName": "Ako",
       "cart": [
         {
-          "productName": "Chicken Thigh",
-          "productPrice": "100.00",
-          "itemQuantity": 9
-        },
-        {
-          "productName": "Onion",
-          "productPrice": "700.00",
-          "itemQuantity": 3
-        },
-        {
-          "productName": "Boneless Bangus",
-          "productPrice": "100.00",
-          "itemQuantity": 2
-        },
-        {
-          "productName": "Shrimp",
-          "productPrice": "700.00",
-          "itemQuantity": 1
-        },
-        {
           "productName": "Chicken Drumstick",
           "productPrice": "180.00",
-          "itemQuantity": 2
+          "itemQuantity": 4,
+          "id": 10,
+          "image": "meats/chicken/chicken drumstick.jpg"
         },
         {
-          "productName": "Pomelo",
-          "productPrice": "130.00",
-          "itemQuantity": 1
+          "productName": "Pork Belly",
+          "productPrice": "280.00",
+          "itemQuantity": 1,
+          "id": 19,
+          "image": "meats/pork/pork belly.jpeg"
         },
         {
-          "productName": "Banana",
-          "productPrice": "70.00",
-          "itemQuantity": 3
+          "productName": "Broccoli",
+          "productPrice": "360.00",
+          "itemQuantity": 1,
+          "id": 43,
+          "image": "vegetables/Broccoli.JPG"
         },
         {
-          "productName": "Pineapple",
-          "productPrice": "25.00",
-          "itemQuantity": 2
+          "productName": "Chicken Ribs",
+          "productPrice": "150.00",
+          "itemQuantity": 1,
+          "id": 14,
+          "image": "meats/chicken/chicken ribs.jpeg"
+        },
+        {
+          "productName": "Mango",
+          "productPrice": "180.00",
+          "itemQuantity": 1,
+          "id": 5,
+          "image": "fruits/mango.jpeg"
+        },
+        {
+          "productName": "Clam-Hardshell",
+          "productPrice": "100.00",
+          "itemQuantity": 1,
+          "id": 27,
+          "image": "seafood/clam_hardshell.jpeg"
         },
         {
           "productName": "Orange",
           "productPrice": "45.00",
-          "itemQuantity": 1
+          "itemQuantity": 1,
+          "id": 6,
+          "image": "fruits/orange.jpeg"
+        },
+        {
+          "productName": "Crabs",
+          "productPrice": "400.00",
+          "itemQuantity": 1,
+          "id": 28,
+          "image": "seafood/crabs.jpeg"
+        },
+        {
+          "productName": "Shrimp",
+          "productPrice": "700.00",
+          "itemQuantity": 2,
+          "id": 29,
+          "image": "seafood/shrimp.jpeg"
+        },
+        {
+          "productName": "Tuna",
+          "productPrice": "380.00",
+          "itemQuantity": 1,
+          "id": 31,
+          "image": "seafood/tuna.jpeg"
+        },
+        {
+          "productName": "Bream Fish",
+          "productPrice": "220.00",
+          "itemQuantity": 1,
+          "id": 26,
+          "image": "seafood/bream fish.jpeg"
+        },
+        {
+          "productName": "Strawberry",
+          "productPrice": "140.00",
+          "itemQuantity": 1,
+          "id": 8,
+          "image": "fruits/stb.jpg"
         }
       ],
       "orders": [],

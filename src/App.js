@@ -32,7 +32,7 @@ export const UserInfo = createContext();
 
 function App() {
   const location = useLocation();
-  const [user,setUser] = useState({});
+  const [user,setUser] = useState(null);
   const [cart,setCart] = useState([]);
   const background = location.state && location.state.background;
   console.log(location.state);

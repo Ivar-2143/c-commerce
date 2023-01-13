@@ -16,6 +16,7 @@ function Home(){
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(()=>{
+      
       if(!user){
           console.log(!isLoggedIn);
           setIsLoggedIn(!isLoggedIn)
