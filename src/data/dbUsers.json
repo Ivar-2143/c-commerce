@@ -99,6 +99,27 @@
           "itemQuantity": 1,
           "id": 8,
           "image": "fruits/stb.jpg"
+        },
+        {
+          "productName": "Singkamas",
+          "productPrice": "50.00",
+          "itemQuantity": 1,
+          "id": 51,
+          "image": "fruits/Singkamas.JPG"
+        },
+        {
+          "productName": "Tilapia",
+          "productPrice": "200.00",
+          "itemQuantity": 1,
+          "id": 30,
+          "image": "seafood/Tilapia.png"
+        },
+        {
+          "productName": "Chicken Thigh",
+          "productPrice": "100.00",
+          "itemQuantity": 2,
+          "id": 15,
+          "image": "meats/chicken/chicken thigh.jpg"
         }
       ],
       "orders": [],
