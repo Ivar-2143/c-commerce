@@ -110,7 +110,7 @@ const SQuantity = styled.div`
 const CartWrapper = styled.div`
   position: relative;
   width: 100%;
-  padding: 20px;
+  /* padding: 20px; */
 `;
 const SubHeader = styled.div`
   position: relative;

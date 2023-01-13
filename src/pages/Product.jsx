@@ -17,7 +17,7 @@ function Product({product}) {
         let newCart;
         let alreadyExistingItem = false
         let canPush = true
-        const currentUser = await fetch(`http://localhost:9000/users/${currentLogInUser[0].id}`)
+        const user = await fetch(`http://localhost:9000/users/${currentLogInUser[0].id}`)
         .then(response => response.json())
         .catch(err => {
             canPush = false
@@ -26,7 +26,7 @@ function Product({product}) {
 
         if (canPush === false) { return }
 
-        currentUser.cart.forEach(element => {
+        user.cart.forEach(element => {
             if (element.productName === product.name)
             {
                 alreadyExistingItem = true
@@ -35,28 +35,28 @@ function Product({product}) {
 
         if (alreadyExistingItem)
         {
-            const cartItem = currentUser.cart.filter(element => element.productName === product.name)[0]
-            const cartItemIndex = currentUser.cart[currentUser.cart.indexOf(cartItem)]
+            const cartItem = user.cart.filter(element => element.productName === product.name)[0]
+            const cartItemIndex = user.cart[user.cart.indexOf(cartItem)]
             cartItem.itemQuantity += 1
-            currentUser.cart[cartItemIndex] = {...cartItem}
-            newCart = currentUser.cart
+            user.cart[cartItemIndex] = {...cartItem}
+            newCart = user.cart
             updateCart(newCart);
             console.log(cart);
         }
         else
         {
-            newCart = currentUser.cart.concat({productName: product.name, productPrice: product.price, itemQuantity: 1, id: product.id, image: product.image})
+            newCart = user.cart.concat({productName: product.name, productPrice: product.price, itemQuantity: 1, id: product.id, image: product.image})
             updateCart(newCart);
             console.log(cart);
         }
 
-        const response = await fetch(`http://localhost:9000/users/${currentUser.id}`,
+        const response = await fetch(`http://localhost:9000/users/${user.id}`,
         {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({...currentUser, cart:newCart})
+            body: JSON.stringify({...user, cart:newCart})
         }).catch(err => alert(`Error: ${err.message}`))
 
         if (response.status === 200)
