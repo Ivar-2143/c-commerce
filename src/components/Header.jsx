@@ -41,7 +41,7 @@ function Header() {
                             {/* <Link to="/login"> */}  
                             <Profile onClick={()=> {
                             (isBoxOpen)? setIsBoxOpen(false) : setIsBoxOpen(true)
-                            console.log(isBoxOpen)}}>{(user)? "Hi," + user.firstName: "Sign In" }
+                            console.log(isBoxOpen)}}>{(user)? "Hi, " + user.firstName: "Sign In" }
                             </Profile>
                             {isBoxOpen && 
                                     <StyledDropDown>
