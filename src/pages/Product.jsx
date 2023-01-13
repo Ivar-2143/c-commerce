@@ -1,10 +1,16 @@
 
+import { useContext } from "react";
 import styled from "styled-components";
+// import { UserContext } from "../assets/context/UserContext";
+import { UserInfo } from "../App";
 import * as variable from '../components/variables';
 import { currentLogInUser } from "./LogIn";
 
-function Product(product) {
+function Product({product}) {
     console.log(product);
+    const {user,updateUser,cart,updateCart} = useContext(UserInfo);
+    
+
 
     const handleAddToCart = async () =>
     {
@@ -34,10 +40,14 @@ function Product(product) {
             cartItem.itemQuantity += 1
             currentUser.cart[cartItemIndex] = {...cartItem}
             newCart = currentUser.cart
+            updateCart(newCart);
+            console.log(cart);
         }
         else
         {
-            newCart = currentUser.cart.concat([{productName: product.name, productPrice: product.price, itemQuantity: 1}])
+            newCart = currentUser.cart.concat({productName: product.name, productPrice: product.price, itemQuantity: 1, id: product.id, image: product.image})
+            updateCart(newCart);
+            console.log(cart);
         }
 
         const response = await fetch(`http://localhost:9000/users/${currentUser.id}`,

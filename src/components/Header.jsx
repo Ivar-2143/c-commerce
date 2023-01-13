@@ -4,10 +4,16 @@ import logo_sm from '../assets/logo-sm.png';
 import cartIcon from '../assets/icons/shopping-cart.png';
 import menuIcon from '../assets/icons/burger-menu-icon.png';
 import * as variable from './variables';
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { useContext , useEffect} from "react";
+import { UserInfo } from "../App";
 
 function Header() {
-
+    const location = useLocation();
+    const params = useLocation();
+    const {user,updateUser,cart,updateCart} = useContext(UserInfo);
+    
+    
     return (
         <div>
             <Wrapper>
@@ -16,13 +22,14 @@ function Header() {
                     <LogoSM src={logo_sm} />
                 </StyledLink>
                 <StyledLink to={"/"}>
-                    <h1>Shop</h1>
+                    <h1>{(params.pathname == "/cart")? "Cart" : "Shop"}</h1>
                 </StyledLink>
                 <RightContainer>
                     <CartContainer>
-                        <img src={cartIcon} alt="cart" />
+                       <Link to="/cart"><img src={cartIcon} alt="cart" /></Link> 
+                       <span>{cart.length}</span>
                     </CartContainer>
-                    <Link to="/signin"><button>Sign In</button></Link>
+                    <Link to="/login"><button>{(user)? "Hi," + user.firstName: "Sign In" }</button></Link>
                     <BurgerMenu src={menuIcon} />
                 </RightContainer>
             </Wrapper>
@@ -85,6 +92,15 @@ const CartContainer = styled.div`
     }
     span{
         position: absolute;
+        top: -10px;
+        left: 60%;
+        height: 25px;
+        width: 25px;
+        border-radius: ${variable.radius.round_edge};
+        background-color: ${(props) => props.theme.main.accent};
+        text-align: center;
+        vertical-align: middle;
+        border: 2px solid ${(props) => props.theme.main.primary};
     }
 `;
 
@@ -100,7 +116,7 @@ const RightContainer = styled.div`
         width: 120px; 
         height: 40px;
         border-radius: 25px;
-        font-size: ${variable.font_medium};
+        font-size: ${variable.font.size_m};
         font-weight: 600;
         margin-left: 20px;
         background-color: ${(props) => props.theme.main.accent};

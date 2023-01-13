@@ -93,7 +93,8 @@ const Container = styled(Link)`
     text-decoration: none;
     color: ${(props)=> props.theme.main.secondary};
     &:hover{  
-      background-color: ${(props)=> props.theme.main.tintedSecondary};
+      /* background-color: ${(props)=> props.theme.main.tintedSecondary}; */
+      transform: scale(1.05);
       transition: 0.45s ease;
       
       ${Button}{
@@ -148,7 +149,7 @@ const ImgContainer = styled.div`
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: inherit  ;
+    border-radius: inherit;
   }
 `
 

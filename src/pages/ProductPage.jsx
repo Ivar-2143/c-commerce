@@ -58,10 +58,7 @@ function ProductPage() {
         </CloseBtn>
         {
             isLoaded && <Product 
-                name={item.name} 
-                price={item.price} 
-                unit={item.unit}
-                image={item.image}
+                product={item}
             />
         }
     </Container>
