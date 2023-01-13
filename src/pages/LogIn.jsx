@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { json, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import backDrop from '../assets/market aerial view.jpg';
 import logo_ghostWhite from '../assets/logos/logo_ghostWhite.png';
@@ -30,7 +30,8 @@ const LogIn = () => {
       
       updateUser(filteredCredential[0]);
       updateCart(filteredCredential[0].cart);
-      
+      sessionStorage.setItem("user",JSON.stringify(filteredCredential[0]));
+
       (filteredCredential[0].type == "customer")? navigate("/") : navigate("/riders");
       
     }
