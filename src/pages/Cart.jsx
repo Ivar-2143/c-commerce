@@ -13,6 +13,11 @@ const Cart = () => {
   console.log(user);
   const navigate = useNavigate();
 
+  const handleCheckout = () => {
+    // let res = confirm("Are you sure you want to checkout?")
+    
+  }
+
   const cartDetails = async () =>
   {
     const getCartDetails = await fetch(`http://localhost:9000/users/${currentLogInUser[0].id}`)
@@ -37,43 +42,43 @@ const Cart = () => {
           ()=> navigate(-1)
         }>Continue Shopping</BackBtn>
         <p> <b>TOTAL PRICE: ₱{totalPrice} </b></p>
-        <CheckoutBtn> Checkout </CheckoutBtn>
+        <CheckoutBtn onClick={()=> (window.confirm("Are you sure you want to checkout?")? navigate("/checkout") : console.log("Cancelled Checkout"))}> Checkout </CheckoutBtn>
       </SubHeader>
         
       <CartList>
         {cart.map(cartItem =>
           <>
-          <Line />
-          <li key={cartItem.id}>
-            <SItem>
-              <SImage src={require(`../assets/product-images/${cartItem.image}`)} alt="" />
-              <NameNPrice>
-                <SName>
-                  {cartItem.productName}
-                </SName>
-                <SPrice>
-                  ₱{cartItem.productPrice}
-                </SPrice>
-              </NameNPrice>
-            </SItem>
-            <SQuantity>
-              <button>
-                -
-              </button>
-              <span>
-                {cartItem.itemQuantity}
-              </span>
-              <button> 
-                +
-              </button>
-            </SQuantity>
-            <STotal>
-              Total: ₱{cartItem.productPrice * cartItem.itemQuantity}   
-            </STotal>
-            <RemoveBtn>
-              <RemoveIcon src={removeIc} />
-            </RemoveBtn>
-          </li>
+            <Line />
+            <li key={cartItem.id}>
+              <SItem>
+                <SImage src={require(`../assets/product-images/${cartItem.image}`)} alt="" />
+                <NameNPrice>
+                  <SName>
+                    {cartItem.productName}
+                  </SName>
+                  <SPrice>
+                    ₱{cartItem.productPrice}
+                  </SPrice>
+                </NameNPrice>
+              </SItem>
+              <SQuantity>
+                <button>
+                  -
+                </button>
+                <span>
+                  {cartItem.itemQuantity}
+                </span>
+                <button> 
+                  +
+                </button>
+              </SQuantity>
+              <STotal>
+                Total: ₱{cartItem.productPrice * cartItem.itemQuantity}   
+              </STotal>
+              <RemoveBtn>
+                <RemoveIcon src={removeIc} />
+              </RemoveBtn>
+            </li>
           </>)
         }
       </CartList>

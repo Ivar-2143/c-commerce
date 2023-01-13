@@ -9,6 +9,7 @@ import Searched from './pages/Searched';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import UserContext from './assets/context/UserContext';
 import UserContextProvider from './assets/context/UserContext';
 
@@ -18,7 +19,7 @@ const theme = {
     secondary: "#272635",
     accent: "#FFAE03",
     accentBlue: "#429BFA",
-    accentGreen: "#DBFE87",
+    accentGreen: "#69995D",
     accentRed: "#EA526F",
     shadedPrimary: "#e5e5e5",
     shadedRed: "#E11B41",
@@ -57,7 +58,8 @@ function App() {
               </Route>
               <Route path={"/login"} element={<LogIn/>} />
               <Route path={"/signup"} element={<SignUp/>} />
-              <Route path={"/cart"} element={<Cart/>}/>
+              <Route path={"/cart"} element={<Cart/>} />
+              <Route path={"/checkout"} element={<Checkout />}/>
             </Routes>
           {/* )} */}
           {background && (
