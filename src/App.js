@@ -12,6 +12,9 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import UserContext from './assets/context/UserContext';
 import UserContextProvider from './assets/context/UserContext';
+import Riders from './pages/Riders';
+import RiderOrders from './components/RiderOrders';
+import IncomingOrders from './components/IncomingOrders';
 
 const theme = {
   main: {
@@ -60,6 +63,10 @@ function App() {
               <Route path={"/signup"} element={<SignUp/>} />
               <Route path={"/cart"} element={<Cart/>} />
               <Route path={"/checkout"} element={<Checkout />}/>
+              <Route path={"/riders"} element={<Riders />}>
+                <Route index element={<IncomingOrders />} />
+                <Route path={":type"} element={<RiderOrders />} />
+              </Route>
             </Routes>
           {/* )} */}
           {background && (

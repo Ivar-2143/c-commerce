@@ -133,8 +133,9 @@
       "lastName": "Jeluz",
       "address": "Imus, Cavite",
       "userMobileNumber": "09123456789",
-      "cart": [],
-      "orders": [],
+      "activeOrder": {},
+      "incoming": [],
+      "completed": [],
       "type": "rider",
       "id": 3
     }
