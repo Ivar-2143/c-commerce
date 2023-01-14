@@ -11,6 +11,7 @@ function Riders() {
 
 
 
+
   return (
     <PageWrap>
         <RiderNav />
@@ -23,7 +24,7 @@ function Riders() {
 
 
 const ContentWrapper = styled.div`
-    width: 80%;
+    width: calc(100% - 300px);
 `;
 
 const PageWrap = styled.div`
