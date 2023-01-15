@@ -4,15 +4,23 @@ import logo_sm from '../assets/logo-sm.png';
 import cartIcon from '../assets/icons/shopping-cart.png';
 import menuIcon from '../assets/icons/burger-menu-icon.png';
 import * as variable from './variables';
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { useContext , useEffect} from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useContext , useEffect, useState} from "react";
 import { UserInfo } from "../App";
 
 function Header() {
     const location = useLocation();
+    const navigate = useNavigate();
     const params = useLocation();
     const {user,updateUser,cart,updateCart} = useContext(UserInfo);
-    
+    const [isBoxOpen, setIsBoxOpen] = useState(false);
+
+    useEffect(()=>{
+        if(!user){
+            navigate("/login");
+        }
+    },[])
+
     
     return (
         <div>
@@ -29,7 +37,26 @@ function Header() {
                        <Link to="/cart"><img src={cartIcon} alt="cart" /></Link> 
                        <span>{cart.length}</span>
                     </CartContainer>
-                    <Link to="/login"><button>{(user)? "Hi," + user.firstName: "Sign In" }</button></Link>
+                        <ButtonWrapper>
+                            {/* <Link to="/login"> */}  
+                            <Profile onClick={()=> {
+                            (isBoxOpen)? setIsBoxOpen(false) : setIsBoxOpen(true)
+                            console.log(isBoxOpen)}}>{(user)? "Hi, " + user.firstName: "Sign In" }
+                            </Profile>
+                            {isBoxOpen && 
+                                    <StyledDropDown>
+                                        <button>Profile</button>
+                                        <button>Orders</button>
+                                        <button onClick={()=>{
+                                            updateUser(null)
+                                            updateCart([])
+                                            sessionStorage.removeItem('user');
+                                            navigate("/login");
+                                        }}><strong>Logout</strong></button>
+                                    </StyledDropDown>
+                                }
+                            {/* </Link> */}
+                        </ButtonWrapper>
                     <BurgerMenu src={menuIcon} />
                 </RightContainer>
             </Wrapper>
@@ -52,6 +79,35 @@ const StyledLink = styled(NavLink)`
         color: ${(props)=> props.theme.main.secondary};
     }
 `;
+const StyledDropDown = styled.div`
+    width: 100px;
+    height: 150px;
+    background-color: ${(props) => props.theme.main.secondary};
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    outline: none;
+    border: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    button{
+        background: none;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        font-size: ${variable.font.size_l};
+        color: ${(props) => props.theme.main.primary};
+        strong{
+            font-weight: 400;
+            color: ${(props) => props.theme.main.accentRed};
+        }
+    }
+    
+`
 
 const Wrapper = styled.div`
     width: 88%;
@@ -86,6 +142,7 @@ const CartContainer = styled.div`
     width: 25px;
     height: 25px;
     cursor: pointer;
+    margin-right: 20px;
     img{
         width: 25px;
         position: relative;
@@ -111,27 +168,33 @@ const RightContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    button{
-        cursor: pointer; 
-        width: 120px; 
-        height: 40px;
-        border-radius: 25px;
-        font-size: ${variable.font.size_m};
-        font-weight: 600;
-        margin-left: 20px;
-        background-color: ${(props) => props.theme.main.accent};
-        border: none;
-        &:hover{
-            border: 2px solid ${(props) => props.theme.main.secondary};
-            
-        }
+    
+`;
+
+const Profile = styled.button`
+    cursor: pointer; 
+    width: 120px; 
+    height: 40px;
+    border-radius: 25px;
+    font-size: ${variable.font.size_m};
+    font-weight: 600;
+    background-color: ${(props) => props.theme.main.accent};
+    position: relative;
+    border: none;
+    &:hover{
+        border: 2px solid ${(props) => props.theme.main.secondary};
     }
     @media (width < 700px) {
-        button,${CartContainer}{
+        display: none;
+        ${CartContainer}{
             display: none;
         }
     }
 `;
+
+const ButtonWrapper = styled.div`
+    position: relative;
+`
 
 const BurgerMenu = styled.img`
     width: 55px;
