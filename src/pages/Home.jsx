@@ -18,6 +18,15 @@ function Home(){
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(()=>{
+
+      const updateCurrentUserCart = async () =>
+      {
+        const serverCartDetails = await fetch(`http://localhost:9000/users/${user.id}`)
+        .then(response => response.json())
+        .then(jsonfile => jsonfile.cart)
+        updateCart(serverCartDetails)
+      }
+
       if(!currentUser){
           console.log(!isLoggedIn);
           setIsLoggedIn(!isLoggedIn)
@@ -26,7 +35,8 @@ function Home(){
       else
       {
         updateUser(currentUser);
-        updateCart(currentUser.cart);
+        //updateCart(currentUser.cart);
+        updateCurrentUserCart()
 
         console.log(user);
       }

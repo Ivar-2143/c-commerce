@@ -4,15 +4,37 @@ import Header from '../components/Header';
 import styled from 'styled-components';
 import OrderDetails from '../components/OrderDetails';
 import OrderStatus from '../components/OrderStatus';
+import { useEffect, useContext } from 'react';
+import { UserInfo } from '../App';
+
+
 
 function Checkout() {
+
+  const {user,updateUser, cart, updateCart} = useContext(UserInfo);
+
+  const updateCartDetails = async () =>
+  {
+    const serverCartDetails = await fetch(`http://localhost:9000/users/${user.id}`)
+    .then(response => response.json())
+    .then(jsonfile => jsonfile.cart)
+    updateCart(serverCartDetails)
+  }
+
+  useEffect(() =>
+  {
+    updateCartDetails()
+  },[])
+
+  console.log(cart)
+
   return (
     <div>
         <Header />
         <ContentWrapper>
             <OrderStatus />
             <Line />
-            <OrderDetails />
+            <OrderDetails orders={cart}/>
         </ContentWrapper>
     </div>
   )

@@ -6,7 +6,22 @@
       "password": "johndoe123",
       "firstName": "John",
       "lastName": "Doe",
-      "cart": [],
+      "cart": [
+        {
+          "productName": "Shrimp",
+          "productPrice": "700.00",
+          "itemQuantity": 2,
+          "id": 29,
+          "image": "seafood/shrimp.jpeg"
+        },
+        {
+          "productName": "Ground Pork",
+          "productPrice": "200.00",
+          "itemQuantity": 1,
+          "id": 18,
+          "image": "meats/pork/ground pork.jpg"
+        }
+      ],
       "type": "customer",
       "orders": []
     },
