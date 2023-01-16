@@ -2,6 +2,9 @@ import styled from "styled-components";
 import * as variable from './variables';
 
 function OrderDetails({orders}) {
+  const today = new Date().toString()
+  const randomOrderNumber = (Math.floor(Math.random() * 10000) + 1).toString()
+  let subTotal = 0
   console.log("Order Details: ", orders)
   return (
     <DetailsWrapper>
@@ -10,8 +13,8 @@ function OrderDetails({orders}) {
         </Title>
         <Content>
             <OrderTracker>
-                <span><b>Order No.: </b></span>
-                <span><b>Date: </b></span>
+                <span><b>Order No.: {randomOrderNumber}</b></span>
+                <span><b>Date: {today}</b></span>
             </OrderTracker>
             <Labels>
                 <h3>Product</h3>
@@ -21,6 +24,7 @@ function OrderDetails({orders}) {
             <ItemsContainer>
                 {orders.map(orderItem =>
                     {
+                        {subTotal += orderItem.itemQuantity * orderItem.productPrice}
                         return(
                         <Item key={orderItem.id}>
                             <div>
@@ -32,6 +36,7 @@ function OrderDetails({orders}) {
                         </Item>
                         )
                     })}
+                    
                  {/*<Item key={1}>
                     <div>
                         <span>Chicken Drumstick</span>
@@ -123,7 +128,7 @@ function OrderDetails({orders}) {
             <PriceInfo>
                 <Charges>
                     <span>Subtotal</span>
-                    <span>₱0.00</span>
+                    <span>₱{subTotal}</span>
                 </Charges>
                 <Charges>
                     <span>Delivery Fee</span>
@@ -135,7 +140,7 @@ function OrderDetails({orders}) {
                 </Charges>
                 <Total>
                     <span>TOTAL</span>
-                    <span>₱0.00</span>
+                    <span>₱{subTotal}</span>
                 </Total>
                 
             </PriceInfo>
