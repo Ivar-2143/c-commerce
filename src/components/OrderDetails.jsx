@@ -3,7 +3,7 @@ import * as variable from './variables';
 
 function OrderDetails({orders}) {
   const today = new Date().toString()
-  const randomOrderNumber = (Math.floor(Math.random() * 10000) + 1).toString()
+  
   let subTotal = 0
   console.log("Order Details: ", orders)
   return (
@@ -13,7 +13,7 @@ function OrderDetails({orders}) {
         </Title>
         <Content>
             <OrderTracker>
-                <span><b>Order No.: {randomOrderNumber}</b></span>
+                <span><b>Order No.: {orders.orderNumber}</b></span>
                 <span><b>Date:</b>{today}</span>
             </OrderTracker>
             <Labels>

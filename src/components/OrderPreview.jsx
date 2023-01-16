@@ -4,10 +4,10 @@ import * as variable from './variables';
 import userIc from '../assets/icons/user-icon.png';
 import locIc from '../assets/icons/icon-location.png';
 import { useNavigate } from 'react-router';
-function OrderPreview({navigate}) {
-
+function OrderPreview({userDetails}) {
+  const navigate = useNavigate()
   return (
-    <StyledPreview onClick={navigate}>
+    <StyledPreview onClick={() => navigate(userDetails.orders[0].orderNumber)}>
         <ContentWrapper>
             <ProfileSection>
                 <img src={userIc} alt="" />
@@ -19,7 +19,8 @@ function OrderPreview({navigate}) {
                 </Status>
                 <ShippingInfo>
                     <img src={locIc} alt="" />
-                    <span>123 Bartolome St., New Zealand Compound, Brgy. Houston, New York City, Philippines </span>
+                    <span>{userDetails.address}</span>
+                    <span>Order Number: {userDetails.orders[0].orderNumber}</span>
                 </ShippingInfo>
             </DetailSection>
             <DetailsBtn>

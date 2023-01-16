@@ -15,7 +15,10 @@ function Checkout() {
 
   const updateDetails = async () =>
   {
-    updateOrders(cart)
+    const getLatestOrder = await fetch(`http://localhost:9000/users/${user.id}`)
+    .then(response => response.json())
+    .then(jsonfile => jsonfile.orders)
+    updateOrders(getLatestOrder[getLatestOrder.length - 1])
     console.log("Cart Local Prior to Deletion: ", cart)
     updateCart([])
   }

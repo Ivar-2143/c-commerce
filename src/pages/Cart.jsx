@@ -42,7 +42,8 @@ const Cart = () => {
 
   const finalizeCartDetails = async () =>
   {
-    const newUserDetails = {...user, cart:[], orders:[...orders].concat({...cart, orderStatus:"Pending"})}
+    const randomOrderNumber = (Math.floor(Math.random() * 10000) + 1).toString()
+    const newUserDetails = {...user, cart:[], orders:[...orders].concat({...cart, orderStatus:"Pending", orderNumber: randomOrderNumber})}
     const updateResponse = await fetch(`http://localhost:9000/users/${user.id}`,
     {
       method: 'PUT',

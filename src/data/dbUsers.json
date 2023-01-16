@@ -8,42 +8,9 @@
       "lastName": "Doe",
       "cart": [],
       "type": "customer",
-      "orders": [
-        {
-          "0": {
-            "productName": "Calamansi",
-            "productPrice": "120.00",
-            "itemQuantity": 2,
-            "id": 44,
-            "image": "vegetables/Calamansi.JPG"
-          },
-          "orderStatus": "Pending"
-        },
-        {
-          "0": {
-            "productName": "Onion",
-            "productPrice": "700.00",
-            "itemQuantity": 1,
-            "id": 38,
-            "image": "vegetables/onions.jpeg"
-          },
-          "1": {
-            "productName": "Strawberry",
-            "productPrice": "140.00",
-            "itemQuantity": 1,
-            "id": 8,
-            "image": "fruits/stb.jpg"
-          },
-          "2": {
-            "productName": "Sili",
-            "productPrice": "260.00",
-            "itemQuantity": 4,
-            "id": 39,
-            "image": "vegetables/sili.jpeg"
-          },
-          "orderStatus": "Pending"
-        }
-      ]
+      "address": "Sector 41, Planet XMX, Heat Galaxy",
+      "userMobileNumber": "80000123125",
+      "orders": []
     },
     {
       "email": "testmail@gmail.com",
@@ -60,9 +27,12 @@
             "id": 15,
             "image": "meats/chicken/chicken thigh.jpg"
           },
-          "orderStatus": "Pending"
+          "orderStatus": "Pending",
+          "orderNumber": 1415
         }
       ],
+      "address": "Sector 61, Planet MX, Your Mom Galaxy",
+      "userMobileNumber": "80000123125",
       "type": "customer",
       "id": 2
     },
@@ -86,30 +56,34 @@
       "lastName": "Bruh",
       "address": "Sector 69, Planet MX, Andromeda Galaxy",
       "userMobileNumber": "80000123125",
-      "cart": [
+      "cart": [],
+      "orders": [
         {
-          "productName": "Chicken Thigh",
-          "productPrice": "100.00",
-          "itemQuantity": 4,
-          "id": 15,
-          "image": "meats/chicken/chicken thigh.jpg"
-        },
-        {
-          "productName": "Grapes",
-          "productPrice": "125.00",
-          "itemQuantity": 2,
-          "id": 4,
-          "image": "fruits/grapes.jpeg"
-        },
-        {
-          "productName": "Banana",
-          "productPrice": "70.00",
-          "itemQuantity": 1,
-          "id": 3,
-          "image": "fruits/banana.jpeg"
+          "0": {
+            "productName": "Chicken Thigh",
+            "productPrice": "100.00",
+            "itemQuantity": 4,
+            "id": 15,
+            "image": "meats/chicken/chicken thigh.jpg"
+          },
+          "1": {
+            "productName": "Grapes",
+            "productPrice": "125.00",
+            "itemQuantity": 2,
+            "id": 4,
+            "image": "fruits/grapes.jpeg"
+          },
+          "2": {
+            "productName": "Banana",
+            "productPrice": "70.00",
+            "itemQuantity": 1,
+            "id": 3,
+            "image": "fruits/banana.jpeg"
+          },
+          "orderStatus": "Pending",
+          "orderNumber": "3699"
         }
       ],
-      "orders": [],
       "type": "customer",
       "id": 4
     }

@@ -8,20 +8,20 @@ import { useEffect, useState } from 'react';
 function IncomingOrders() {
   const navigate = useNavigate();
 
-  const handleNavigate = () =>{
-    navigate('/riders/active')
+  const handleNavigate = (id) =>{
+    navigate(`active/${id}`)
   }
-  const [availableOrders, setAvailableOrders] = useState([])
+  const [availableUsers, setAvailableUsers] = useState([])
 
   const initializeOrders = async () =>
   {
-    console.log("SXE")
     const serverFullInfo = await fetch(`http://localhost:9000/users`)
     .then(response => response.json())
     .catch(err => alert(`Error: ${err.message}`))
     console.log("Server: ", serverFullInfo)
-    const filter = serverFullInfo.filter(user => user.type === "customer" && user.orders.length)
-    setAvailableOrders(filter)
+    const filter = serverFullInfo.filter(user => user.type === "customer" && user.orders.length >= 1)
+    console.log("Filter: ", filter)
+    setAvailableUsers(filter)
   }
 
   useEffect(()=>
@@ -34,12 +34,12 @@ function IncomingOrders() {
   return (
     <ContentWrapper>
         <OrderList>
-            <OrderPreview key={1} navigate={handleNavigate}/>
-            <OrderPreview key={2} navigate={handleNavigate}/>
-            <OrderPreview key={3} navigate={handleNavigate}/>
-            <OrderPreview key={4} navigate={handleNavigate}/>
-            <OrderPreview key={5} navigate={handleNavigate}/>
-            <OrderPreview key={6} navigate={handleNavigate}/>
+          {availableUsers.map(user => {
+            return(
+              <OrderPreview key={user.id} userDetails={user} navigate={handleNavigate}/>
+            )
+          })}
+            
         </OrderList>
     </ContentWrapper>
   )
