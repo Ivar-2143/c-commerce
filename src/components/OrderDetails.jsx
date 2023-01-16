@@ -26,105 +26,18 @@ function OrderDetails({orders}) {
                     {
                         {subTotal += orderItem.itemQuantity * orderItem.productPrice}
                         return(
-                        <Item key={orderItem.id}>
-                            <div>
-                                <span>{orderItem.productName}</span>
-                                <span>{orderItem.productPrice}</span>
-                            </div>
-                            <MidSpan>{orderItem.itemQuantity}</MidSpan>
-                            <RightSpan>₱{orderItem.itemQuantity * orderItem.productPrice}</RightSpan>
-                        </Item>
+                            <Item key={orderItem.id}>
+                                <div>
+                                    <span>{orderItem.productName}</span>
+                                    <span>₱{orderItem.productPrice}</span>
+                                </div>
+                                <MidSpan>{orderItem.itemQuantity}</MidSpan>
+                                <RightSpan>₱{orderItem.itemQuantity * orderItem.productPrice}</RightSpan>
+                            </Item>
                         )
                     })}
-                    
-                 {/*<Item key={1}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={2}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={3}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={2}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={2}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={2}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={2}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={2}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={2}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item key={2}>
-                    <div>
-                        <span>Chicken Drumstick</span>
-                        <span>₱180</span>
-                    </div>
-                    <MidSpan>4</MidSpan>
-                    <RightSpan>₱0.00</RightSpan>
-                </Item>
-                <Item></Item>
-                <Item></Item>
-                {/* {order && order.map( item =>{
-                    
-                    })
-                } */} 
-                </ItemsContainer>
-            
+            </ItemsContainer>  
+
             <PriceInfo>
                 <Charges>
                     <span>Subtotal</span>

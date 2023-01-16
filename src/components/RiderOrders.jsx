@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import IncomingOrders from './IncomingOrders';
 import { UserInfo } from '../App';
+import OrderDetails from './OrderDetails';
+import ActiveOrder from './ActiveOrder';
 
 function RiderOrders() {
     const navigate = useNavigate()
@@ -14,7 +16,7 @@ function RiderOrders() {
     }, [[params.type]])
 
   return (
-    <div>{(params.type == 'active')? "Active Orders" : (params.type == 'completed')? "Completed Orders" : <IncomingOrders />}</div>
+    <div>{(params.type == 'active')? <ActiveOrder />: (params.type == 'completed')? <IncomingOrders /> : <IncomingOrders />}</div>
   )
 }
 
