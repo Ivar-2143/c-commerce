@@ -65,14 +65,20 @@ const ProfileSection = styled.div`
         height: 99%;
 
     }
+    span{
+        word-wrap: break-word;
+    }
 `;
 const DetailSection = styled.div`
-    
+    position: relative;
 `;
 
 const ShippingInfo = styled.div`
     display: grid;
     grid-template-columns: 1fr 10fr;
+    word-wrap: break-word;
+    align-items: center;
+    justify-items: center;
     img{
         width: 20px;
         height: 20px;
@@ -80,18 +86,42 @@ const ShippingInfo = styled.div`
 `;
 
 const Status = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 4fr 6fr;
+    margin: 15px 0;
+    align-items: center;
+    div{
+        height: 15px;
+        width: 15px;
+        left: 35%;
+        position: relative;
+        border-radius: ${variable.radius.round_edge};
+        background-color: darkgray;
 
-div{
-    height: 40px;
-    width: 40px;
-    border-radius: ${variable.radius.round_edge};
-    background-color: darkgray;
-
-}
+    }
+    span{
+        
+        font-weight: 600;
+    }
 `;
 
 const DetailsBtn = styled.div`
-    
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    button{
+        background-color: ${(props)=> props.theme.main.accent};
+        border-radius: ${variable.radius.smooth_edge};
+        width: 170px;
+        height: 40px;
+        pointer-events: none;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        font-size: ${variable.font.size_l};
+        /* border: 2px solid ${(props) => props.theme.main.secondary}; */
+    }
 `
 
 export default OrderPreview

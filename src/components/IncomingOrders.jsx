@@ -30,6 +30,7 @@ const OrderList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-top: 5%;
 `;
 
 
