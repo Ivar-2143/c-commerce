@@ -19,7 +19,7 @@ function OrderDetails({orders}) {
                 <Rightlbl>Price</Rightlbl>
             </Labels>
             <ItemsContainer>
-                {/* {orders.map(orderItem =>
+                {orders.map(orderItem =>
                     {
                         return(
                             <Item key={orderItem.id}>
@@ -31,58 +31,8 @@ function OrderDetails({orders}) {
                                 <RightSpan>₱{orderItem.itemQuantity * orderItem.productPrice}</RightSpan>
                             </Item>
                         )
-                    })} */}
+                    })}
 
-
-
-                    <Item key={1}>
-                        <div>
-                            <span>Bangus Belly</span>
-                            <span>₱536.00</span>
-                        </div>
-                        <MidSpan>3</MidSpan>
-                        <RightSpan>₱{3 * 536.00}</RightSpan>
-                    </Item>
-                    <Item key={6}>
-                        <div>
-                            <span>Bangus Belly</span>
-                            <span>₱536.00</span>
-                        </div>
-                        <MidSpan>3</MidSpan>
-                        <RightSpan>₱{3 * 536.00}</RightSpan>
-                    </Item>
-                    <Item key={5}>
-                        <div>
-                            <span>Bangus Belly</span>
-                            <span>₱536.00</span>
-                        </div>
-                        <MidSpan>3</MidSpan>
-                        <RightSpan>₱{3 * 536.00}</RightSpan>
-                    </Item>
-                    <Item key={4}>
-                        <div>
-                            <span>Bangus Belly</span>
-                            <span>₱536.00</span>
-                        </div>
-                        <MidSpan>3</MidSpan>
-                        <RightSpan>₱{3 * 536.00}</RightSpan>
-                    </Item>
-                    <Item key={2}>
-                        <div>
-                            <span>Bangus Belly</span>
-                            <span>₱536.00</span>
-                        </div>
-                        <MidSpan>3</MidSpan>
-                        <RightSpan>₱{3 * 536.00}</RightSpan>
-                    </Item>
-                    <Item key={3}>
-                        <div>
-                            <span>Bangus Belly</span>
-                            <span>₱536.00</span>
-                        </div>
-                        <MidSpan>3</MidSpan>
-                        <RightSpan>₱{3 * 536.00}</RightSpan>
-                    </Item>
             </ItemsContainer>
             
             <PriceInfo>
