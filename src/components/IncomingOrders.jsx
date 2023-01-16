@@ -4,6 +4,9 @@ import OrderPreview from './OrderPreview';
 import * as variable from './variables';
 
 function IncomingOrders() {
+
+  
+
   return (
     <ContentWrapper>
         <OrderList>
@@ -30,6 +33,7 @@ const OrderList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-top: 5%;
 `;
 
 

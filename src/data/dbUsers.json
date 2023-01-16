@@ -51,7 +51,18 @@
       "firstName": "Pinoy",
       "lastName": "Ako",
       "cart": [],
-      "orders": [],
+      "orders": [
+        {
+          "0": {
+            "productName": "Chicken Thigh",
+            "productPrice": "100.00",
+            "itemQuantity": 1,
+            "id": 15,
+            "image": "meats/chicken/chicken thigh.jpg"
+          },
+          "orderStatus": "Pending"
+        }
+      ],
       "type": "customer",
       "id": 2
     },
@@ -69,10 +80,10 @@
       "id": 3
     },
     {
-      "email": "masterjames@mail.com",
+      "email": "master@mail.com",
       "password": "root",
-      "firstName": "James Bernard",
-      "lastName": "Udal",
+      "firstName": "Mystery Master",
+      "lastName": "Bruh",
       "address": "Sector 69, Planet MX, Andromeda Galaxy",
       "userMobileNumber": "80000123125",
       "cart": [

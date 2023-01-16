@@ -5,6 +5,7 @@ import * as variable from './variables';
 import { useState, useContext} from 'react';
 import logo from '../assets/logos/logo_honeyYellow.png';
 import { UserInfo } from '../App';
+import { isFocusable } from '@testing-library/user-event/dist/utils';
 
 function RiderNav() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -15,15 +16,10 @@ function RiderNav() {
     <NavWrapper>
         <Logo src={logo} />
         <StyledNav>
-            <SLink style={{
-                pointerEvents: "none"
-            }}/>
             <SLink to={'requests'}  className={(activeIndex == 0) ? "is-active" : "is-inactive"} onClick={()=> setActiveIndex(0)}><span>Incoming Orders</span></SLink>
             <SLink to={'active'} className={(activeIndex == 1) ? "is-active"  : "is-inactive"} onClick={()=> setActiveIndex(1)}><span>Active Order </span></SLink>
             <SLink to={'completed'} className={(activeIndex == 2)? "is-active"  : "is-inactive"} onClick={()=> setActiveIndex(2)}><span>Completed Orders</span></SLink>
-            <SLink style={{
-                pointerEvents: "none"
-            }}/>
+           
         </StyledNav>
         <UserSection>
             <ProfileBtn>Profile</ProfileBtn>
@@ -64,11 +60,27 @@ const StyledNav = styled.nav`
         color: ${(props) => props.theme.main.secondary};
         border-bottom-left-radius: 10px;
         border-top-left-radius: 10px;
+        /* :after,:before{
+            border-right: 4px solid green;
+            content: '';
+            height: 45px;
+            right: -0px;
+            position: absolute;
+            width: 100px;
+        }
+        :after{
+            border-bottom-right-radius: 10px;
+            transform: translateY(-100%);
+        }
+        :before{
+            border-top-right-radius: 10px;
+            transform: translateY(100%);
+        } */
         
         
 }
 
-margin-top: 20%;
+margin-top: 40%;
 display: flex;
 flex-direction: column;
 align-items: flex-end;
