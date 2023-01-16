@@ -1,6 +1,6 @@
 import { currentLogInUser } from './LogIn'
 import { UserInfo } from '../App';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Header from '../components/Header';
 import styled from 'styled-components';
 import * as variable from '../components/variables';
@@ -9,22 +9,40 @@ import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const {user,updateUser, cart, updateCart} = useContext(UserInfo);
-  console.log(cart);
-  console.log(user);
+  // console.log(cart);
+  // console.log(user);
   const navigate = useNavigate();
 
   const handleCheckout = () => {
     // let res = confirm("Are you sure you want to checkout?")
+    //(window.confirm("Are you sure you want to checkout?")? navigate("/checkout") : console.log("Cancelled Checkout")
+    if (window.confirm("Are you sure you want to checkout?") && cart.length >= 1)
+    {
+      navigate("/checkout")
+    }
+    else if ( cart.length < 1)
+    {
+      alert("You can't go to checkout without planning to purchase any item!")
+    }
+    else
+    {
+      alert("Checkout cancelled.")
+    }
     
   }
 
-  const cartDetails = async () =>
+  const updateCartDetails = async () =>
   {
-    const getCartDetails = await fetch(`http://localhost:9000/users/${currentLogInUser[0].id}`)
+    const serverCartDetails = await fetch(`http://localhost:9000/users/${user.id}`)
     .then(response => response.json())
     .then(jsonfile => jsonfile.cart)
-    return getCartDetails
+    updateCart(serverCartDetails)
   }
+
+  useEffect(() =>
+  {
+    updateCartDetails()
+  },[])
 
   let totalPrice = 0; 
 
@@ -32,6 +50,64 @@ const Cart = () => {
     cart.map(item => totalPrice += item.productPrice * item.itemQuantity);
   }
   calculateTotal();
+
+  const modifyQuantity = async (event, productName, elementID) =>
+  {
+    //console.log("Initial cart", cart)
+    let selectedItem = cart.filter(item => item.productName === productName)
+    let newCart = cart
+    if (event.target.innerText === "+")
+    {
+      newCart = cart.map(item => {
+        if (item.productName === productName)
+        {
+          item.itemQuantity += 1
+        }
+        return item
+      })
+      updateCart(newCart)
+      console.log(newCart)
+    } else if (event.target.innerText === "-" && selectedItem[0].itemQuantity === 1)
+    {
+      newCart = newCart.filter(item => item.id != elementID)
+      updateCart(newCart)
+    }
+    else
+    {
+      newCart = cart.map(item => {
+        if (item.productName === productName)
+        {
+          item.itemQuantity -= 1
+        }
+        return item
+      })
+      updateCart(newCart)
+    }
+
+    const updateResponse = await fetch(`http://localhost:9000/users/${user.id}`,{
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({...user, cart:newCart})
+    }).catch(err => alert(`Error: ${err}`))
+  }
+
+  const deleteItem = async (productID) =>
+  {
+
+    let newCart = cart.filter(item => item.id != productID)
+    console.log("test")
+    updateCart(newCart)
+    console.log(cart)
+    const updateResponse = await fetch(`http://localhost:9000/users/${user.id}`,{
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({...user, cart:newCart})
+    }).catch(err => alert(`Error: ${err}`))
+  }
 
 
   return (
@@ -42,7 +118,7 @@ const Cart = () => {
           ()=> navigate(-1)
         }>Continue Shopping</BackBtn>
         <p> <b>TOTAL PRICE: ₱{totalPrice} </b></p>
-        <CheckoutBtn onClick={()=> (window.confirm("Are you sure you want to checkout?")? navigate("/checkout") : console.log("Cancelled Checkout"))}> Checkout </CheckoutBtn>
+        <CheckoutBtn onClick={handleCheckout}> Checkout </CheckoutBtn>
       </SubHeader>
         
       <CartList>
@@ -62,20 +138,20 @@ const Cart = () => {
                 </NameNPrice>
               </SItem>
               <SQuantity>
-                <button>
+                <button onClick={event => modifyQuantity(event, cartItem.productName, cartItem.id)}>
                   -
                 </button>
                 <span>
                   {cartItem.itemQuantity}
                 </span>
-                <button> 
+                <button onClick={event => modifyQuantity(event, cartItem.productName, cartItem.id)}> 
                   +
                 </button>
               </SQuantity>
               <STotal>
                 Total: ₱{cartItem.productPrice * cartItem.itemQuantity}   
               </STotal>
-              <RemoveBtn>
+              <RemoveBtn onClick={() => deleteItem(cartItem.id)}>
                 <RemoveIcon src={removeIc} />
               </RemoveBtn>
             </li>

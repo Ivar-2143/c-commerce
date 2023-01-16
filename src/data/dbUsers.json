@@ -6,7 +6,22 @@
       "password": "johndoe123",
       "firstName": "John",
       "lastName": "Doe",
-      "cart": [],
+      "cart": [
+        {
+          "productName": "Chicken Drumstick",
+          "productPrice": "180.00",
+          "itemQuantity": 1,
+          "id": 10,
+          "image": "meats/chicken/chicken drumstick.jpg"
+        },
+        {
+          "productName": "Onion",
+          "productPrice": "700.00",
+          "itemQuantity": 4,
+          "id": 38,
+          "image": "vegetables/onions.jpeg"
+        }
+      ],
       "type": "customer",
       "orders": []
     },
