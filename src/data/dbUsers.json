@@ -50,113 +50,7 @@
       "password": "12345",
       "firstName": "Pinoy",
       "lastName": "Ako",
-      "cart": [
-        {
-          "productName": "Chicken Drumstick",
-          "productPrice": "180.00",
-          "itemQuantity": 4,
-          "id": 10,
-          "image": "meats/chicken/chicken drumstick.jpg"
-        },
-        {
-          "productName": "Pork Belly",
-          "productPrice": "280.00",
-          "itemQuantity": 1,
-          "id": 19,
-          "image": "meats/pork/pork belly.jpeg"
-        },
-        {
-          "productName": "Broccoli",
-          "productPrice": "360.00",
-          "itemQuantity": 1,
-          "id": 43,
-          "image": "vegetables/Broccoli.JPG"
-        },
-        {
-          "productName": "Chicken Ribs",
-          "productPrice": "150.00",
-          "itemQuantity": 1,
-          "id": 14,
-          "image": "meats/chicken/chicken ribs.jpeg"
-        },
-        {
-          "productName": "Mango",
-          "productPrice": "180.00",
-          "itemQuantity": 1,
-          "id": 5,
-          "image": "fruits/mango.jpeg"
-        },
-        {
-          "productName": "Clam-Hardshell",
-          "productPrice": "100.00",
-          "itemQuantity": 1,
-          "id": 27,
-          "image": "seafood/clam_hardshell.jpeg"
-        },
-        {
-          "productName": "Orange",
-          "productPrice": "45.00",
-          "itemQuantity": 1,
-          "id": 6,
-          "image": "fruits/orange.jpeg"
-        },
-        {
-          "productName": "Crabs",
-          "productPrice": "400.00",
-          "itemQuantity": 1,
-          "id": 28,
-          "image": "seafood/crabs.jpeg"
-        },
-        {
-          "productName": "Shrimp",
-          "productPrice": "700.00",
-          "itemQuantity": 2,
-          "id": 29,
-          "image": "seafood/shrimp.jpeg"
-        },
-        {
-          "productName": "Tuna",
-          "productPrice": "380.00",
-          "itemQuantity": 1,
-          "id": 31,
-          "image": "seafood/tuna.jpeg"
-        },
-        {
-          "productName": "Bream Fish",
-          "productPrice": "220.00",
-          "itemQuantity": 1,
-          "id": 26,
-          "image": "seafood/bream fish.jpeg"
-        },
-        {
-          "productName": "Strawberry",
-          "productPrice": "140.00",
-          "itemQuantity": 1,
-          "id": 8,
-          "image": "fruits/stb.jpg"
-        },
-        {
-          "productName": "Singkamas",
-          "productPrice": "50.00",
-          "itemQuantity": 1,
-          "id": 51,
-          "image": "fruits/Singkamas.JPG"
-        },
-        {
-          "productName": "Tilapia",
-          "productPrice": "200.00",
-          "itemQuantity": 1,
-          "id": 30,
-          "image": "seafood/Tilapia.png"
-        },
-        {
-          "productName": "Chicken Thigh",
-          "productPrice": "100.00",
-          "itemQuantity": 2,
-          "id": 15,
-          "image": "meats/chicken/chicken thigh.jpg"
-        }
-      ],
+      "cart": [],
       "orders": [],
       "type": "customer",
       "id": 2
@@ -173,6 +67,40 @@
       "completed": [],
       "type": "rider",
       "id": 3
+    },
+    {
+      "email": "masterjames@mail.com",
+      "password": "root",
+      "firstName": "James Bernard",
+      "lastName": "Udal",
+      "address": "Sector 69, Planet MX, Andromeda Galaxy",
+      "userMobileNumber": "80000123125",
+      "cart": [
+        {
+          "productName": "Chicken Thigh",
+          "productPrice": "100.00",
+          "itemQuantity": 4,
+          "id": 15,
+          "image": "meats/chicken/chicken thigh.jpg"
+        },
+        {
+          "productName": "Grapes",
+          "productPrice": "125.00",
+          "itemQuantity": 2,
+          "id": 4,
+          "image": "fruits/grapes.jpeg"
+        },
+        {
+          "productName": "Banana",
+          "productPrice": "70.00",
+          "itemQuantity": 1,
+          "id": 3,
+          "image": "fruits/banana.jpeg"
+        }
+      ],
+      "orders": [],
+      "type": "customer",
+      "id": 4
     }
   ]
 }
