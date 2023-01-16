@@ -6,10 +6,11 @@ import banner from '../assets/fresh_products_banner.jpg';
 import logo_ghostWhite from '../assets/logos/logo_ghostWhite.png';
 import { Link } from 'react-router-dom';
 import * as variable from '../components/variables';
+import { useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
-
+  const navigate = useNavigate()
   const handleSignUp = async (event) =>
   {
     event.preventDefault()
@@ -50,8 +51,15 @@ const SignUp = () => {
     })
     .catch(err => console.log(err.message))
 
-    response.status === 200 || 201 ? alert("You have successfully registered.") : alert("Registration error.")
-    
+    if (response.status === 200 || 201)
+    {
+      alert("You have successfully registered.")
+      navigate("/login")
+    }
+    else
+    {
+      alert("Registration error.")
+    }
   }
 
   return (

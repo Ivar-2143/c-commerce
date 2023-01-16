@@ -39,6 +39,7 @@ function App() {
   const location = useLocation();
   const [user,setUser] = useState(null);
   const [cart,setCart] = useState([]);
+  const [orders, setOrders] = useState([])
   const background = location.state && location.state.background;
   console.log(location.state);
   useEffect(()=>{
@@ -51,7 +52,7 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <UserInfo.Provider value={{user: user, updateUser: setUser, cart: cart, updateCart: setCart}} >
+        <UserInfo.Provider value={{user: user, updateUser: setUser, cart: cart, updateCart: setCart, orders:orders, updateOrders:setOrders}} >
           {/* {isLoggedIn && ( */}
             <Routes location={background || location}>            
               <Route path={"/"} element={<Home/>}>
