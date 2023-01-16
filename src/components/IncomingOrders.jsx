@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import OrderPreview from './OrderPreview';
 import * as variable from './variables';
 import { useNavigate } from 'react-router';
+import { useEffect, useState } from 'react';
 
 function IncomingOrders() {
   const navigate = useNavigate();
@@ -10,6 +11,25 @@ function IncomingOrders() {
   const handleNavigate = () =>{
     navigate('/riders/active')
   }
+  const [availableOrders, setAvailableOrders] = useState([])
+
+  const initializeOrders = async () =>
+  {
+    console.log("SXE")
+    const serverFullInfo = await fetch(`http://localhost:9000/users`)
+    .then(response => response.json())
+    .catch(err => alert(`Error: ${err.message}`))
+    console.log("Server: ", serverFullInfo)
+    const filter = serverFullInfo.filter(user => user.type === "customer" && user.orders.length)
+    setAvailableOrders(filter)
+  }
+
+  useEffect(()=>
+  {
+    initializeOrders();
+  },[])
+ 
+  
 
   return (
     <ContentWrapper>
