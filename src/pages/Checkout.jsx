@@ -26,7 +26,6 @@ function Checkout() {
     updateCartDetails()
   },[])
 
-  console.log(cart)
 
   return (
     <div>

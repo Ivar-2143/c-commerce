@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import * as variable from './variables';
 
-function OrderDetails(order) {
+function OrderDetails({orders}) {
+  console.log("Order Details: ", orders)
   return (
     <DetailsWrapper>
         <Title>
@@ -18,7 +19,20 @@ function OrderDetails(order) {
                 <Rightlbl>Price</Rightlbl>
             </Labels>
             <ItemsContainer>
-                <Item key={1}>
+                {orders.map(orderItem =>
+                    {
+                        return(
+                        <Item key={orderItem.id}>
+                            <div>
+                                <span>{orderItem.productName}</span>
+                                <span>{orderItem.productPrice}</span>
+                            </div>
+                            <MidSpan>{orderItem.itemQuantity}</MidSpan>
+                            <RightSpan>₱{orderItem.itemQuantity * orderItem.productPrice}</RightSpan>
+                        </Item>
+                        )
+                    })}
+                 {/*<Item key={1}>
                     <div>
                         <span>Chicken Drumstick</span>
                         <span>₱180</span>
@@ -103,8 +117,9 @@ function OrderDetails(order) {
                 {/* {order && order.map( item =>{
                     
                     })
-                } */}
-            </ItemsContainer>
+                } */} 
+                </ItemsContainer>
+            
             <PriceInfo>
                 <Charges>
                     <span>Subtotal</span>

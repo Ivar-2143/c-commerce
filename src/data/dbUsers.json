@@ -8,18 +8,18 @@
       "lastName": "Doe",
       "cart": [
         {
-          "productName": "Shrimp",
-          "productPrice": "700.00",
-          "itemQuantity": 2,
-          "id": 29,
-          "image": "seafood/shrimp.jpeg"
+          "productName": "Chicken Drumstick",
+          "productPrice": "180.00",
+          "itemQuantity": 1,
+          "id": 10,
+          "image": "meats/chicken/chicken drumstick.jpg"
         },
         {
-          "productName": "Ground Pork",
-          "productPrice": "200.00",
-          "itemQuantity": 1,
-          "id": 18,
-          "image": "meats/pork/ground pork.jpg"
+          "productName": "Onion",
+          "productPrice": "700.00",
+          "itemQuantity": 4,
+          "id": 38,
+          "image": "vegetables/onions.jpeg"
         }
       ],
       "type": "customer",
