@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import * as variable from './variables';
 import userIc from '../assets/icons/user-icon.png';
 import locIc from '../assets/icons/icon-location.png';
-function OrderPreview() {
+import { useNavigate } from 'react-router';
+function OrderPreview({navigate}) {
+
   return (
-    <StyledPreview>
+    <StyledPreview onClick={navigate}>
         <ContentWrapper>
             <ProfileSection>
                 <img src={userIc} alt="" />
