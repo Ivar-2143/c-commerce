@@ -14,7 +14,7 @@ function OrderDetails({orders}) {
         <Content>
             <OrderTracker>
                 <span><b>Order No.: {randomOrderNumber}</b></span>
-                <span><b>Date: {today}</b></span>
+                <span><b>Date:</b>{today}</span>
             </OrderTracker>
             <Labels>
                 <h3>Product</h3>
@@ -22,7 +22,7 @@ function OrderDetails({orders}) {
                 <Rightlbl>Price</Rightlbl>
             </Labels>
             <ItemsContainer>
-                {orders.map(orderItem =>
+                {/* {orders.map(orderItem =>
                     {
                         {subTotal += orderItem.itemQuantity * orderItem.productPrice}
                         return(
@@ -35,7 +35,7 @@ function OrderDetails({orders}) {
                                 <RightSpan>₱{orderItem.itemQuantity * orderItem.productPrice}</RightSpan>
                             </Item>
                         )
-                    })}
+                    })} */}
             </ItemsContainer>  
 
             <PriceInfo>

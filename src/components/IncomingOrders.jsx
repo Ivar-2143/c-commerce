@@ -4,6 +4,9 @@ import OrderPreview from './OrderPreview';
 import * as variable from './variables';
 
 function IncomingOrders() {
+
+  
+
   return (
     <ContentWrapper>
         <OrderList>
