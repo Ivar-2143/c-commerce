@@ -35,7 +35,7 @@ function OrderDetails({orders}) {
                                 <RightSpan>₱{orderItem.itemQuantity * orderItem.productPrice}</RightSpan>
                             </Item>
                         )
-                    })} */}
+                    })} */}s
             </ItemsContainer>  
 
             <PriceInfo>

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import * as variable from './variables';
 import { useState, useContext} from 'react';
 import logo from '../assets/logos/logo_honeyYellow.png';
@@ -9,9 +9,21 @@ import { isFocusable } from '@testing-library/user-event/dist/utils';
 
 function RiderNav() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const params = useParams();
     const {user, updateUser, cart, updateCart} = useContext(UserInfo);
     const navigate = useNavigate();
     
+    useEffect(()=>{
+        if(params.type == 'active'){
+            setActiveIndex(1)
+        }else if(params.type == 'completed'){
+            setActiveIndex(2)
+        }else{
+            setActiveIndex(0)
+        }
+
+    },[params.type])
+
   return (
     <NavWrapper>
         <Logo src={logo} />
