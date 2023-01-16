@@ -8,17 +8,18 @@ import removeIc from '../assets/icons/icon-remove-96.png';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
-  const {user,updateUser, cart, updateCart} = useContext(UserInfo);
+  const {user, cart, orders, updateCart, updateOrders} = useContext(UserInfo);
   // console.log(cart);
   // console.log(user);
   const navigate = useNavigate();
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     // let res = confirm("Are you sure you want to checkout?")
     //(window.confirm("Are you sure you want to checkout?")? navigate("/checkout") : console.log("Cancelled Checkout")
     if (window.confirm("Are you sure you want to checkout?") && cart.length >= 1)
     {
-      navigate("/checkout")
+      const responseStatus = await finalizeCartDetails()
+      responseStatus ? navigate("/checkout") : alert("Something went wrong.")
     }
     else if ( cart.length < 1)
     {
@@ -31,17 +32,36 @@ const Cart = () => {
     
   }
 
-  const updateCartDetails = async () =>
+  const updateDetails = async () =>
   {
-    const serverCartDetails = await fetch(`http://localhost:9000/users/${user.id}`)
+    const serverUserDetails = await fetch(`http://localhost:9000/users/${user.id}`)
     .then(response => response.json())
-    .then(jsonfile => jsonfile.cart)
-    updateCart(serverCartDetails)
+    updateCart(serverUserDetails.cart)
+    updateOrders(serverUserDetails.orders)
+  }
+
+  const finalizeCartDetails = async () =>
+  {
+    const newUserDetails = {...user, cart:[], orders:[...orders].concat({...cart, orderStatus:"Pending"})}
+    const updateResponse = await fetch(`http://localhost:9000/users/${user.id}`,
+    {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newUserDetails)
+    })
+    .then(response =>
+      {
+        return response.ok
+      })
+    .catch(err => alert(`Error with server updation: ${err.message}`))
+    return updateResponse
   }
 
   useEffect(() =>
   {
-    updateCartDetails()
+    updateDetails()
   },[])
 
   let totalPrice = 0; 

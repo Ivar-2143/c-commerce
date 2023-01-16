@@ -6,24 +6,44 @@
       "password": "johndoe123",
       "firstName": "John",
       "lastName": "Doe",
-      "cart": [
+      "cart": [],
+      "type": "customer",
+      "orders": [
         {
-          "productName": "Chicken Drumstick",
-          "productPrice": "180.00",
-          "itemQuantity": 1,
-          "id": 10,
-          "image": "meats/chicken/chicken drumstick.jpg"
+          "0": {
+            "productName": "Calamansi",
+            "productPrice": "120.00",
+            "itemQuantity": 2,
+            "id": 44,
+            "image": "vegetables/Calamansi.JPG"
+          },
+          "orderStatus": "Pending"
         },
         {
-          "productName": "Onion",
-          "productPrice": "700.00",
-          "itemQuantity": 4,
-          "id": 38,
-          "image": "vegetables/onions.jpeg"
+          "0": {
+            "productName": "Onion",
+            "productPrice": "700.00",
+            "itemQuantity": 1,
+            "id": 38,
+            "image": "vegetables/onions.jpeg"
+          },
+          "1": {
+            "productName": "Strawberry",
+            "productPrice": "140.00",
+            "itemQuantity": 1,
+            "id": 8,
+            "image": "fruits/stb.jpg"
+          },
+          "2": {
+            "productName": "Sili",
+            "productPrice": "260.00",
+            "itemQuantity": 4,
+            "id": 39,
+            "image": "vegetables/sili.jpeg"
+          },
+          "orderStatus": "Pending"
         }
-      ],
-      "type": "customer",
-      "orders": []
+      ]
     },
     {
       "email": "testmail@gmail.com",

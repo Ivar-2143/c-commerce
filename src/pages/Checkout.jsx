@@ -11,19 +11,18 @@ import { UserInfo } from '../App';
 
 function Checkout() {
 
-  const {user,updateUser, cart, updateCart} = useContext(UserInfo);
+  const {user, cart, updateCart, orders, updateOrders} = useContext(UserInfo);
 
-  const updateCartDetails = async () =>
+  const updateDetails = async () =>
   {
-    const serverCartDetails = await fetch(`http://localhost:9000/users/${user.id}`)
-    .then(response => response.json())
-    .then(jsonfile => jsonfile.cart)
-    updateCart(serverCartDetails)
+    updateOrders(cart)
+    console.log("Cart Local Prior to Deletion: ", cart)
+    updateCart([])
   }
 
   useEffect(() =>
   {
-    updateCartDetails()
+    updateDetails()
   },[])
 
 
@@ -33,7 +32,7 @@ function Checkout() {
         <ContentWrapper>
             <OrderStatus />
             <Line />
-            <OrderDetails orders={cart}/>
+            <OrderDetails orders={orders}/>
         </ContentWrapper>
     </div>
   )
