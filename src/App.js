@@ -65,18 +65,18 @@ function App() {
               <Route path={"/signup"} element={<SignUp/>} />
               <Route path={"/cart"} element={<Cart/>} />
               <Route path={"/checkout"} element={<Checkout />}/>
-              {/* <Route path={"/riders"} element={<Riders />}>
+              <Route path={"/riders"} element={<Riders />}>
                 <Route index element={<IncomingOrders />} />
                 <Route path={":type"} element={<RiderOrders />} >
-                  <Route path={"active/:orderId"} element={}></Route>
+                  {/* <Route path={"active/:orderId"} element={}></Route> */}
                 </Route>
-              </Route> */}
-              <Route path={"/riders"} element={<Riders />}>
+              </Route>
+              {/* <Route path={"/riders"} element={<Riders />}>
                 <Route index element={<IncomingOrders />} />
               <Route path={"requests"} element={<IncomingOrders />} />
               <Route path={"active/:orderID"} element={<ActiveOrder />} />
-              <Route path={"completed"} element={<IncomingOrders />} />
-            </Route>
+              <Route path={"completed"} element={<IncomingOrders />} /> */}
+            {/* </Route> */}
             </Routes>
           {/* )} */}
           {background && (

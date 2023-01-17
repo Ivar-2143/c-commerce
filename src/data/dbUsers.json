@@ -86,6 +86,44 @@
       ],
       "type": "customer",
       "id": 4
+    },
+    {
+      "email": "testemail@email.com",
+      "password": "12345",
+      "firstName": "Adrian",
+      "lastName": "Jeluz",
+      "address": "Imus, Cavite Philippines",
+      "userMobileNumber": "09123456789",
+      "cart": [],
+      "orders": [
+        {
+          "0": {
+            "productName": "Strawberry",
+            "productPrice": "140.00",
+            "itemQuantity": 1,
+            "id": 8,
+            "image": "fruits/stb.jpg"
+          },
+          "1": {
+            "productName": "Sitaw / Longbeans",
+            "productPrice": "50.00",
+            "itemQuantity": 1,
+            "id": 40,
+            "image": "vegetables/sitaw_longbeans.jpg"
+          },
+          "2": {
+            "productName": "Pork Steak-Cut",
+            "productPrice": "220.00",
+            "itemQuantity": 1,
+            "id": 24,
+            "image": "meats/pork/PORK-STEAK-CUT.jpeg"
+          },
+          "orderStatus": "Pending",
+          "orderNumber": "5370"
+        }
+      ],
+      "type": "customer",
+      "id": 5
     }
   ]
 }

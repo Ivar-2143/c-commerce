@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import * as variable from './variables';
 
-function OrderDetails({orders}) {
+function CheckedOut({orders}) {
   const today = new Date().toString()
   
   let subTotal = 0
@@ -16,8 +16,8 @@ function OrderDetails({orders}) {
         </Title>
         <Content>
             <OrderTracker>
-                <span><b>Order No.: {orders.orderNumber}</b></span>
-                <span><b>Date:</b>{today}</span>
+                <span><b>Order No.: 1422</b></span>
+                <span><b>Date:</b>17/01/2023</span>
             </OrderTracker>
             <Labels>
                 <h3>Product</h3>
@@ -25,7 +25,7 @@ function OrderDetails({orders}) {
                 <Rightlbl>Price</Rightlbl>
             </Labels>
             <ItemsContainer>
-                {orders.map(orderItem =>
+                {/* {orders.map(orderItem =>
                     {
                         {subTotal += orderItem.itemQuantity * orderItem.productPrice}
                         return(
@@ -38,7 +38,15 @@ function OrderDetails({orders}) {
                                 <RightSpan>₱{orderItem.itemQuantity * orderItem.productPrice}</RightSpan>
                             </Item>
                         )
-                    })}
+                    })} */}
+                    <Item key={1}>
+                                <div>
+                                    <span>Chicken Breast</span>
+                                    <span>₱360.54</span>
+                                </div>
+                                <MidSpan> 2 </MidSpan>
+                                <RightSpan>₱721.08</RightSpan>
+                            </Item>
             </ItemsContainer>  
 
             <PriceInfo>
@@ -202,4 +210,4 @@ const Note = styled.span`
     color: rgba(0,0,0,0.4);
 `;
 
-export default OrderDetails;
+export default CheckedOut;

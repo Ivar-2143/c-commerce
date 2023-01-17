@@ -2,18 +2,38 @@ import React from 'react'
 import * as variable from './variables';
 import styled from 'styled-components';
 import OrderDetails from './OrderDetails';
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useState, useContext, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router';
+import { UserInfo } from '../App';
+import CheckedOut from './CheckedOut';
 
 
 function ActiveOrder() {
     const [statusIndex, setStatusIndex] = useState(0);
     const navigate = useNavigate();
+//     const params = useParams();
+//     const {user, cart, updateCart, orders, updateOrders} = useContext(UserInfo);
+
+//     const updateDetails = async () =>
+//     {
+//       const getLatestOrder = await fetch(`http://localhost:9000/users/${user.id}`)
+//       .then(response => response.json())
+//       .then(jsonfile => jsonfile.orders)
+//       updateOrders(getLatestOrder[getLatestOrder.length - 1])
+//       console.log("Cart Local Prior to Deletion: ", cart)
+//       updateCart([])
+//     }
+
+//   useEffect(() =>
+//   {
+//     updateDetails()
+//   },[params.orderId])
+
     
   return (
     <ContentWrapper>
         <ControlWrapper>
-            <OrderDetails />
+            <CheckedOut />
             <Buttons>
                 
                 <BtnCancel 
